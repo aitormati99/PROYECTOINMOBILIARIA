@@ -9,7 +9,7 @@ public class Escritura {
 	private int dniCliente;
 	
 	/**
-	 * Represents Escritura.
+	 * Represents Escritura
 	 */
 	public Escritura() {
 		super();
