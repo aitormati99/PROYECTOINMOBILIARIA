@@ -8,7 +8,7 @@ import java.util.Date;
 import javax.rmi.CORBA.Util;
 
 import interfaces.ICalcular;
-import logica.presentacion.Utilidades;
+import utilidades.Utilidades;
 
 
 
