@@ -1,10 +1,15 @@
 package logica.negocios;
+
+import java.util.ArrayList;
+
+import interfaces.ICalcular;
+
 /** Represents Tasador
  * @author Alumno Aitor Matilla
  * @version 1.0
  * @since 2020
  */
-public class Tasador extends Empleado {
+public class Tasador extends Empleado implements ICalcular<Tasador> {
 
 	private int contadorFacturas;
 	private boolean corbata;
@@ -47,6 +52,11 @@ public class Tasador extends Empleado {
 	}
 	public void setCorbata(boolean corbata) {
 		this.corbata = corbata;
+	}
+	@Override
+	public ArrayList<Integer> calcular(ArrayList<Tasador> t) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

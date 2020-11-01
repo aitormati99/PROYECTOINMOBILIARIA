@@ -3,14 +3,15 @@ package exception;
 import java.awt.List;
 
 /**
- * @author aitor y ane Este es el paquete donde guardamos las excepciones, en
+ * @author Aitor 
+ * Este es el paquete donde guardamos las excepciones, en
  *         este caso la excepcion de UsuarioNoExiste
  *
  */
 public class UsuarioNoExiste extends Exception {
 
-	public UsuarioNoExiste(String mensaje) {
-		super(mensaje);
+	public UsuarioNoExiste(String codigo) {
+		super(codigo);
 		
 	}
 	
