@@ -27,8 +27,8 @@ public class Tasador extends Empleado implements ICalcular<Tasador> {
 	 *@param horarioLaboral The Tasador's horarioLaboral.
 	 **@param contadorFacturas The Tasador's contadorFacturas.
 	 */
-	public Tasador(String nombre, String dni, int sueldo, int horarioLaboral,int contadorFacturas,boolean corbata) {
-		super(nombre, dni, sueldo, horarioLaboral);
+	public Tasador( String dni, int sueldo, int horarioLaboral,int contadorFacturas,boolean corbata) {
+		super( dni, sueldo, horarioLaboral);
 		this.contadorFacturas = contadorFacturas;
 		this.corbata=corbata;
 	}

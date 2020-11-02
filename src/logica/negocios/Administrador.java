@@ -32,19 +32,17 @@ public class Administrador extends Empleado implements ICalcular<Administrador> 
 	}
 	/**Creates an Administrador.
 	 *@param Dni The Administrador's Dni.
-	 *@param dni The Administrador's dni.
 	 *@param sueldo The Administrador's sueldo.
 	 *@param horarioLaboral The Administrador's horarioLaboral.
 	 *@param usuario The Administrador's usuario.
 	 *@param contrasenya The Administrador's contrasenya.
 	 */
-
-	public Administrador(String Dni, String dni, int sueldo, int horarioLaboral,String usuario, String contrasenya) {
-		super(Dni, dni, sueldo, horarioLaboral);
+	
+	public Administrador(String dni, int sueldo, int horarioLaboral,String usuario, String contrasenya) {
+		super(dni, sueldo, horarioLaboral);
 		this.usuario = usuario;
 		this.contrasenya = contrasenya;
 	}
-	
 	
 	
 	/**Gets the Administrador's usuario.
@@ -53,6 +51,7 @@ public class Administrador extends Empleado implements ICalcular<Administrador> 
 	public String getUsuario() {
 		return usuario;
 	}
+	
 	/** Sets the Administrador's usuario.
 	 * @param usuario A string containing the Administrador's usuario.
 	 */

@@ -26,8 +26,8 @@ public class Comercial extends Empleado implements ICalcular<Comercial>{
 	 *@param horarioLaboral The Comercial's horarioLaboral.
 	 *@param clientes The Comercial's clientes.
 	 */
-	public Comercial(String nombre, String dni, int sueldo, int horarioLaboral,ArrayList<String> clientes) {
-		super(nombre, dni, sueldo, horarioLaboral);
+	public Comercial( String dni, int sueldo, int horarioLaboral,ArrayList<String> clientes) {
+		super( dni, sueldo, horarioLaboral);
 		this.clientes = clientes;
 	}
 	/**Gets the Comercial's clientes.

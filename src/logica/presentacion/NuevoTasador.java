@@ -20,21 +20,7 @@ public class NuevoTasador extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					NuevoTasador frame = new NuevoTasador();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
@@ -71,7 +57,7 @@ public class NuevoTasador extends JFrame {
 		JLabel lblTasador = new JLabel("TASADOR");
 		lblTasador.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblTasador.setBackground(Color.BLACK);
-		lblTasador.setBounds(220, 57, 190, 35);
+		lblTasador.setBounds(261, 59, 190, 35);
 		contentPane.add(lblTasador);
 		
 		textField = new JTextField();

@@ -6,66 +6,70 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import logica.negocios.Administrador;
+import logica.negocios.Cliente;
+import logica.negocios.Comercial;
+import logica.negocios.Factura;
+import logica.negocios.Tasador;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.JComboBox;
+import java.awt.Font;
+import java.util.ArrayList;
 
 public class MenuAdministrador extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuAdministrador frame = new MenuAdministrador();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
+	 * @param padre 
+	 * @param tasadores 
+	 * @param comerciales 
+	 * @param admin 
+	 * @param facturas 
+	 * @param clientes 
+	 * @param password 
+	 * @param usuario 
 	 */
-	public MenuAdministrador() {
+	public MenuAdministrador(String usuario, String password, ArrayList<Cliente> clientes, ArrayList<Factura> facturas, ArrayList<Administrador> admin, ArrayList<Comercial> comerciales, ArrayList<Tasador> tasadores, PantallaInicial padre) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 663, 466);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblBienvenido = new JLabel("Bienvenido");
-		lblBienvenido.setBounds(164, 16, 102, 20);
+		lblBienvenido.setFont(new Font("Tahoma", Font.PLAIN, 23));
+		lblBienvenido.setBounds(171, 37, 139, 38);
 		contentPane.add(lblBienvenido);
 		
 		JButton btnOk = new JButton("OK");
-		btnOk.setBounds(298, 52, 115, 29);
+		btnOk.setBounds(449, 119, 115, 29);
 		contentPane.add(btnOk);
 		
 		JButton btnSalir = new JButton("SALIR");
-		btnSalir.setBounds(298, 215, 115, 29);
+		btnSalir.setBounds(449, 278, 115, 29);
 		contentPane.add(btnSalir);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(70, 215, 166, -100);
-		contentPane.add(scrollPane);
-		
-		JList list = new JList();
-		list.setBounds(242, 228, -163, -108);
-		contentPane.add(list);
-		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(70, 53, 166, 26);
+		comboBox.setBounds(80, 119, 312, 29);
 		contentPane.add(comboBox);
+		
+		JList list_1 = new JList();
+		list_1.setBounds(95, 173, 286, 221);
+		contentPane.add(list_1);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(93, 171, 288, 223);
+		contentPane.add(scrollPane);
 	}
 }

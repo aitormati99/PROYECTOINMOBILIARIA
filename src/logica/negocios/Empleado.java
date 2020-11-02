@@ -6,7 +6,7 @@ package logica.negocios;
  */
 public abstract class Empleado {
 
-	private String nombre;
+
 	private String dni;
 	private int sueldo;
 	private int horarioLaboral;
@@ -24,25 +24,14 @@ public abstract class Empleado {
 	 *@param sueldo The Empleado's  sueldo.
 	 *@param horarioLaboral The Empleado's  horarioLaboral.
 	 */
-	public Empleado(String nombre, String dni, int sueldo, int horarioLaboral) {
+	public Empleado(String dni, int sueldo, int horarioLaboral) {
 		super();
-		this.nombre = nombre;
+		
 		this.dni = dni;
 		this.sueldo = sueldo;
 		this.horarioLaboral = horarioLaboral;
 	}
-	/**Gets the Empleado's nombre.
-	 * @return A string representing the Empleado's nombre.
-	 */
-	public String getNombre() {
-		return nombre;
-	}
-	/** Sets the Empleado's nombre.
-	 * @param nombre A string containing the Empleado's nombre.
-	 */
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	
 	/**Gets the Empleado's dni.
 	 * @return A string representing the Empleado's dni.
 	 */

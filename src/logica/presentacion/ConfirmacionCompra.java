@@ -14,21 +14,6 @@ public class ConfirmacionCompra extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ConfirmacionCompra frame = new ConfirmacionCompra();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -64,7 +49,7 @@ public class ConfirmacionCompra extends JFrame {
 		contentPane.add(label_1);
 		
 		JLabel lblEnBreveEmpezaremos = new JLabel("En breve empezaremos a preparar tu compra");
-		lblEnBreveEmpezaremos.setBounds(108, 249, 432, 28);
+		lblEnBreveEmpezaremos.setBounds(152, 249, 432, 28);
 		contentPane.add(lblEnBreveEmpezaremos);
 	}
 

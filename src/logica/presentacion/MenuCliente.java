@@ -6,34 +6,28 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import logica.negocios.Cliente;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class MenuCliente extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuCliente frame = new MenuCliente();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
+	 * @param papi 
+	 * @param clientes 
 	 */
-	public MenuCliente() {
+	public MenuCliente(ArrayList<Cliente> clientes, PantallaInicial papi) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 962, 686);
@@ -53,6 +47,7 @@ public class MenuCliente extends JFrame {
 		contentPane.add(lblVilla);
 		
 		JLabel lblVilla_1 = new JLabel("VILLA 2");
+		lblVilla_1.setIcon(new ImageIcon("imagenes/villa1.jpg"));
 		lblVilla_1.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblVilla_1.setBounds(117, 317, 139, 25);
 		contentPane.add(lblVilla_1);

@@ -18,21 +18,7 @@ public class VisualizacionFactura extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VisualizacionFactura frame = new VisualizacionFactura();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
@@ -57,7 +43,7 @@ public class VisualizacionFactura extends JFrame {
 		JLabel lblComerciales = new JLabel("COMERCIALES:");
 		lblComerciales.setForeground(Color.BLACK);
 		lblComerciales.setFont(new Font("Dialog", Font.BOLD, 24));
-		lblComerciales.setBounds(56, 65, 258, 57);
+		lblComerciales.setBounds(59, 16, 258, 57);
 		contentPane.add(lblComerciales);
 		
 		JButton btnSalir = new JButton("SALIR");

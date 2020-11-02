@@ -46,26 +46,26 @@ public class BuscarFactura extends JFrame {
 		
 		JLabel label = new JLabel("dd-MM-yyyy");
 		label.setFont(new Font("Tahoma", Font.BOLD, 16));
-		label.setBounds(141, 82, 115, 20);
+		label.setBounds(140, 38, 115, 20);
 		contentPane.add(label);
 		
 		JButton btnOk = new JButton("OK");
-		btnOk.setBounds(271, 135, 115, 29);
+		btnOk.setBounds(271, 88, 115, 29);
 		contentPane.add(btnOk);
 		
 		JButton btnSalir = new JButton("SALIR");
-		btnSalir.setBounds(271, 199, 115, 29);
+		btnSalir.setBounds(271, 175, 115, 29);
 		contentPane.add(btnSalir);
 		
 		textField = new JTextField();
-		textField.setBounds(110, 136, 146, 26);
+		textField.setBounds(109, 89, 146, 26);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel label_1 = new JLabel("FECHA: ");
 		label_1.setForeground(new Color(0, 0, 0));
 		label_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_1.setBounds(15, 135, 78, 31);
+		label_1.setBounds(15, 86, 78, 31);
 		contentPane.add(label_1);
 	}
 
