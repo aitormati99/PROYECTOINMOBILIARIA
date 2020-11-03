@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import logica.datos.AdministradorBaseDatos;
+import logica.datos.CrearBaseDatos;
 import logica.negocios.Administrador;
 import logica.negocios.Cliente;
 import logica.negocios.Comercial;
@@ -66,6 +67,19 @@ public class PantallaInicial extends JFrame {
 	
 	public PantallaInicial() {
 		setResizable(false);
+		
+		CrearBaseDatos mydb = new CrearBaseDatos("Inmobiliaria.db");
+		
+		mydb.createLink();
+		mydb.inicializarBD();
+
+		admin = logica.datos.AdministradorBaseDatos.selectAllAdministrador(mydb.getConn());
+		facturas = logica.datos.FacturaBaseDatos.selectAllFactura(mydb.getConn());
+		comerciales = logica.datos.ComercialBaseDatos.selectAllComercial(mydb.getConn());
+		tasadores = logica.datos.TasadorBaseDatos.selectAllTasador(mydb.getConn());
+		clientes = logica.datos.ClienteBaseDatos.selectAllCliente(mydb.getConn());
+
+		mydb.closeLink();
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

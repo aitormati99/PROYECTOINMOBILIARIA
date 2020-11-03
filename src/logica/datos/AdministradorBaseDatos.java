@@ -97,7 +97,7 @@ public class AdministradorBaseDatos {
 			while (rs.next()) {
 				
 				Administrador seleccionado = new Administrador(rs.getString("DNI"), rs.getInt("sueldo"),
-						rs.getInt("horasDia"), rs.getString("nombreUser"), rs.getString("contraseña"));
+						rs.getInt("horarioLaboral"), rs.getString("nombreUser"), rs.getString("contraseña"));
 				lista.add(seleccionado);
 
 

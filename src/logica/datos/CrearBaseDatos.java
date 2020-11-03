@@ -60,9 +60,9 @@ public class CrearBaseDatos {
 			// crear las tablas cliente, administrador, comercial, tasador y factura
 			ClienteBaseDatos.createClienteTable(this.conn);
 			AdministradorBaseDatos.createAdministradorTable(this.conn);
-		//	ComercialBaseDatos.createComercialTable(this.conn);
-		//	TasadorBaseDatos.createTasadorTable(this.conn);
-		//	FacturaBaseDatos.createFacturaTable(this.conn);
+			ComercialBaseDatos.createComercialTable(this.conn);
+			TasadorBaseDatos.createTasadorTable(this.conn);
+			FacturaBaseDatos.createFacturaTable(this.conn);
 	
 	
 			// insertar datos en la tabla cliente
@@ -91,17 +91,17 @@ public class CrearBaseDatos {
 						ArrayList<String> clientes = new ArrayList<String>();
 						clientes.add("Elena");
 						clientes.add("Irene");
-//						ComercialBaseDatos.insertComercial(this.conn,"73054320U", 1800, 6, clientes);
-//						ComercialBaseDatos.insertComercial(this.conn,"73087690Y", 2000, 7,clientes );
-//						ComercialBaseDatos.insertComercial(this.conn,"73043212D", 2100, 8, clientes);
+						ComercialBaseDatos.insertComercial(this.conn,"73054320U", 1800, 6, clientes);
+						ComercialBaseDatos.insertComercial(this.conn,"73087690Y", 2000, 7,clientes );
+						ComercialBaseDatos.insertComercial(this.conn,"73043212D", 2100, 8, clientes);
 
 	
 						// insertar datos en la tabla tasador
 						
 						
-//						TasadorBaseDatos.insertTasador(this.conn,"74565421O", 3456, 5, 1);
-//						TasadorBaseDatos.insertTasador(this.conn,"88877765P", 1234, 6,2 );
-//						TasadorBaseDatos.insertTasador(this.conn,"44321234U", 1233, 4,3);
+						TasadorBaseDatos.insertTasador(this.conn,"74565421O", 3456, 5, 1);
+						TasadorBaseDatos.insertTasador(this.conn,"88877765P", 1234, 6,2 );
+						TasadorBaseDatos.insertTasador(this.conn,"44321234U", 1233, 4,3);
 
 	
 	
@@ -109,13 +109,13 @@ public class CrearBaseDatos {
 						Domicilio casacomprada;
 						ArrayList<String> domicilios2 = new ArrayList<String>();
 						domicilios2.add("Villa3");
-				//		FacturaBaseDatos.insertFactura(this.conn, "12-08-2009",870.000,1,"89765421P",(casacomprada), domicilios2);
+						FacturaBaseDatos.insertFactura(this.conn,1, "12-08-2009",870.000,domicilios2);
 						
 						
 					
 						ArrayList<String> domicilios3 = new ArrayList<String>();
 						domicilios3.add("Villa4");
-				//		FacturaBaseDatos.insertFactura(this.conn, "04-10-2020",1.500.000,2,"99988876L",(casacomprada), domicilios2);
+						FacturaBaseDatos.insertFactura(this.conn,2, "04-10-2020",1.500000, domicilios3);
 						
 				
 	

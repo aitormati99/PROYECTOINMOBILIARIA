@@ -1,4 +1,5 @@
 package logica.negocios;
+import java.util.ArrayList;
 import java.util.Date;
 /**Represents Factura
  * @author Alumno Aitor Matilla
@@ -10,8 +11,7 @@ public class Factura {
 	private Date fecha;
 	private int coste;
 	private int numFac;
-	private int dniTasador;
-	private Domicilio casacomprada;
+	private ArrayList<String> nombreDomicilios;
 	
 	/**
 	 * Represents Escritura.
@@ -26,15 +26,15 @@ public class Factura {
 	 *@param coste The Factura's  coste.
 	 *@param numFac The Factura's  numFac.
 	 *@param dniTasador The Factura's  dniTasador.
-	 *@param casaComprada The Factura's  casaComprada.
+	 *@param nombreDomicilios The Factura's  nombreDomicilios.
 	 */
-	public Factura(Date fecha, int coste, int numFac, int dniTasador, Domicilio casacomprada) {
+	
+	public Factura(Date fecha, int coste, int numFac, ArrayList<String> nombreDomicilios) {
 		super();
 		this.fecha = fecha;
 		this.coste = coste;
 		this.numFac = numFac;
-		this.dniTasador = dniTasador;
-		this.casacomprada = casacomprada;
+		this.nombreDomicilios = nombreDomicilios;
 	}
 
 	/**Gets the Factura's fecha.
@@ -44,6 +44,8 @@ public class Factura {
 		return fecha;
 	}
 
+
+	
 
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
@@ -77,33 +79,26 @@ public class Factura {
 		this.numFac = numFac;
 	}
 
-	/**Gets the Factura's dniTasador.
-	 * @return A string representing the Factura's dniTasador.
+	
+	
+	/**Gets the Factura's nombreDomicilios.
+	 * @return A string representing the Factura's nombreDomicilios.
 	 */
-	public int getDniTasador() {
-		return dniTasador;
+	
+	
+
+	public ArrayList<String> getNombreDomicilios() {
+		return nombreDomicilios;
+	}
+	
+	/** Sets the Factura's nombreDomicilios.
+	 * @param nombre A string containing the Factura's nombreDomicilios.
+	 */
+
+	public void setNombreDomicilios(ArrayList<String> nombreDomicilios) {
+		this.nombreDomicilios = nombreDomicilios;
 	}
 
-	/** Sets the Factura's dniTasador.
-	 * @param nombre A string containing the Factura's dniTasador.
-	 */
-	public void setDniTasador(int dniTasador) {
-		this.dniTasador = dniTasador;
-	}
-
-	/**Gets the Factura's casaComprada.
-	 * @return A string representing the Factura's casaComprada.
-	 */
-	public Domicilio getCasacomprada() {
-		return casacomprada;
-	}
-
-	/** Sets the Factura's casaComprada.
-	 * @param nombre A string containing the Factura's casaComprada.
-	 */
-	public void setCasacomprada(Domicilio casacomprada) {
-		this.casacomprada = casacomprada;
-	}
 	
 	
 	

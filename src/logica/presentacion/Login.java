@@ -37,11 +37,11 @@ public class Login extends JFrame {
 	private JTextField adminText;
 	private JPasswordField passText;
 
-	private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-	private ArrayList<Administrador> admin = new ArrayList<Administrador>();
-	private ArrayList<Factura> facturas = new ArrayList<Factura>();
-	private ArrayList<Comercial> comerciales = new ArrayList<Comercial>();
-	private ArrayList<Tasador> tasadores= new ArrayList <Tasador>();
+	private ArrayList<Cliente> clientesBD = new ArrayList<Cliente>();
+	private ArrayList<Administrador> adminBD = new ArrayList<Administrador>();
+	private ArrayList<Factura> facturasBD = new ArrayList<Factura>();
+	private ArrayList<Comercial> comercialesBD = new ArrayList<Comercial>();
+	private ArrayList<Tasador> tasadoresBD= new ArrayList <Tasador>();
 	private PantallaInicial padre;
 
 	/**
@@ -53,11 +53,11 @@ public class Login extends JFrame {
 		setResizable(false);
 		
 		
-		this.clientes=clientes;
-		this.admin=admin;
-		this.facturas=facturas;
-		this.comerciales=comerciales;
-		this.tasadores=tasadores;
+		this.clientesBD=clientes;
+		this.adminBD=admin;
+		this.facturasBD=facturas;
+		this.comercialesBD=comerciales;
+		this.tasadoresBD=tasadores;
 		this.padre=padre;
 		
 		
@@ -154,7 +154,7 @@ public class Login extends JFrame {
 
 		boolean existencia = false;
 
-		for (Administrador a : admin) {
+		for (Administrador a : adminBD) {
 
 			if (a.getUsuario().equals(usuario)) {
 				existencia = true;
