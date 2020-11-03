@@ -8,12 +8,13 @@ import java.util.ArrayList;
  */
 public class Cliente {
 
+	
 	private String nombre;
 	private String apellido;
 	private String direccion;
 	private int telefono;
-	private int dni;
-	private Domicilio casas;
+	private String dni;
+	private ArrayList<String> nombreDomicilios;
 	
 	/**
 	 * Represents Cliente.
@@ -31,15 +32,17 @@ public class Cliente {
 	 *@param dni The Cliente's dni.
 	 *@param casas The Cliente's casas.
 	 */
-	public Cliente(String nombre, String apellido, String direccion, int telefono, int dni, Domicilio casas) {
+	public Cliente(String nombre, String apellido, String direccion, int telefono, String dni,
+			ArrayList<String> nombreDomicilios) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.dni = dni;
-		this.casas = casas;
+		this.nombreDomicilios = nombreDomicilios;
 	}
+	
 
 	/**Gets the Cliente's nombre.
 	 * @return A string representing the Cliente's nombre.
@@ -92,27 +95,27 @@ public class Cliente {
 	/**Gets the Cliente's dni.
 	 * @return A string representing the Cliente's dni.
 	 */
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 	/** Sets the Cliente's dni.
 	 * @param nombre A string containing the Cliente's dni.
 	 */
-	public void setDni(int dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
-	/**Gets the Cliente's casas.
-	 * @return A string representing the Cliente's casas.
+	/**Gets the Cliente's nombredomicilios.
+	 * @return A string representing the Cliente's nombredomicilios.
 	 */
-	public Domicilio getCasas() {
-		return casas;
+
+	public ArrayList<String> getNombreDomicilios() {
+		return nombreDomicilios;
 	}
-	/** Sets the Cliente's casas.
-	 * @param nombre A string containing the Cliente's casas.
-	 */
-	public void setCasas(Domicilio casas) {
-		this.casas = casas;
+
+	public void setNombreDomicilios(ArrayList<String> nombreDomicilios) {
+		this.nombreDomicilios = nombreDomicilios;
 	}
+	
 
 	
 	

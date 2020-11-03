@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import logica.datos.AdministradorBaseDatos;
 import logica.negocios.Administrador;
 import logica.negocios.Cliente;
 import logica.negocios.Comercial;
@@ -65,6 +66,8 @@ public class PantallaInicial extends JFrame {
 	
 	public PantallaInicial() {
 		setResizable(false);
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 684, 493);
 		contentPane = new JPanel();

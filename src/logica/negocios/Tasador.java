@@ -12,7 +12,7 @@ import interfaces.ICalcular;
 public class Tasador extends Empleado implements ICalcular<Tasador> {
 
 	private int contadorFacturas;
-	private boolean corbata;
+	
 	/**
 	 * Represents Tasador.
 	 */
@@ -27,10 +27,10 @@ public class Tasador extends Empleado implements ICalcular<Tasador> {
 	 *@param horarioLaboral The Tasador's horarioLaboral.
 	 **@param contadorFacturas The Tasador's contadorFacturas.
 	 */
-	public Tasador( String dni, int sueldo, int horarioLaboral,int contadorFacturas,boolean corbata) {
+	public Tasador( String dni, int sueldo, int horarioLaboral,int contadorFacturas) {
 		super( dni, sueldo, horarioLaboral);
 		this.contadorFacturas = contadorFacturas;
-		this.corbata=corbata;
+		
 	}
 	/**Gets the Tasador's contadorFacturas.
 	 * @return A string representing the Tasador's casas.
@@ -44,15 +44,7 @@ public class Tasador extends Empleado implements ICalcular<Tasador> {
 	public void setContadorFacturas(int contadorFacturas) {
 		this.contadorFacturas = contadorFacturas;
 	}
-	/** the Tasador's corbata.
-	 * @return A string representing the Tasador's corbata.
-	 */
-	public boolean isCorbata() {
-		return corbata;
-	}
-	public void setCorbata(boolean corbata) {
-		this.corbata = corbata;
-	}
+	
 	@Override
 	public ArrayList<Integer> calcular(ArrayList<Tasador> t) {
 		// TODO Auto-generated method stub
