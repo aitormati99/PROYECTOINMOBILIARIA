@@ -18,8 +18,6 @@ public class VisualizacionFactura extends JFrame {
 
 	private JPanel contentPane;
 
-
-
 	/**
 	 * Create the frame.
 	 */
@@ -31,21 +29,21 @@ public class VisualizacionFactura extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JScrollPane scrollPane = new JScrollPane((Component) null);
 		scrollPane.setBounds(27, 152, 421, 222);
 		contentPane.add(scrollPane);
-		
+
 		JTextPane textPane = new JTextPane();
 		scrollPane.setViewportView(textPane);
 		textPane.setFont(new Font("Tahoma", Font.BOLD, 16));
-		
+
 		JLabel lblComerciales = new JLabel("COMERCIALES:");
 		lblComerciales.setForeground(Color.BLACK);
 		lblComerciales.setFont(new Font("Dialog", Font.BOLD, 24));
 		lblComerciales.setBounds(59, 16, 258, 57);
 		contentPane.add(lblComerciales);
-		
+
 		JButton btnSalir = new JButton("SALIR");
 		btnSalir.setBounds(462, 384, 115, 29);
 		contentPane.add(btnSalir);

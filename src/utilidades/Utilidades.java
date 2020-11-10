@@ -37,8 +37,8 @@ public class Utilidades {
 	}
 
 	/**
-	 * Permite introducir por teclado en la consola un número real realizando las
-	 * comprobaciones pertienentes.
+	 * Permite introducir por teclado en la consola un número real realizando
+	 * las comprobaciones pertienentes.
 	 * 
 	 * @return Devuelve el número real que se haya introducido por teclado.
 	 */
@@ -62,8 +62,8 @@ public class Utilidades {
 	}
 
 	/**
-	 * Permite introducir por teclado en la consola un caracter (8 bits = -128 <->
-	 * 127) realizando las comprobaciones pertienentes.
+	 * Permite introducir por teclado en la consola un caracter (8 bits = -128
+	 * <-> 127) realizando las comprobaciones pertienentes.
 	 * 
 	 * @return Devuelve el caracter que se haya introducido por teclado.
 	 */
@@ -86,7 +86,8 @@ public class Utilidades {
 	 * Permite introducir por teclado en la consola una cadena de caracteres
 	 * (String) realizando las comprobaciones pertienentes.
 	 * 
-	 * @return Devuelve la cadena de caracteres que se haya introducido por teclado.
+	 * @return Devuelve la cadena de caracteres que se haya introducido por
+	 *         teclado.
 	 */
 	public static String leerCadena() {
 		InputStreamReader isr = new InputStreamReader(System.in);

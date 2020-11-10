@@ -34,16 +34,9 @@ public class ClienteBaseDatos {
 	public static void createClienteTable(Connection conn) {
 
 		// SQL statement for creating a new table
-		String sql = "CREATE TABLE IF NOT EXISTS cliente (\n" 
-				+ "    nombre text NOT NULL,\n" 
-				+ "    apellido text NOT NULL,\n"
-				+ "    telefono text NOT NULL,\n" 
-				+ "    direccion text NOT NULL,\n" 
-				+ "    DNI text PRIMARY KEY,\n"
-				+ "    nombreDomicilios text NOT NULL\n"
-				+ ");";
-		
-		
+		String sql = "CREATE TABLE IF NOT EXISTS cliente (\n" + "    nombre text NOT NULL,\n"
+				+ "    apellido text NOT NULL,\n" + "    telefono text NOT NULL,\n" + "    direccion text NOT NULL,\n"
+				+ "    DNI text PRIMARY KEY,\n" + "    nombreDomicilios text NOT NULL\n" + ");";
 
 		try (Statement stmt = conn.createStatement()) {
 			// create a new table
@@ -54,7 +47,7 @@ public class ClienteBaseDatos {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	/**
 	 * Este metodo sirve para insertar los clientes en la base de datos
 	 * 
@@ -71,13 +64,13 @@ public class ClienteBaseDatos {
 	 * @param telefono
 	 *            es el telefono del cliente
 	 * @param casas
-	 *            es una lista de  las casas que compra el cliente
+	 *            es una lista de las casas que compra el cliente
 	 */
-	 
-	public static void insertCliente(Connection conn, String nombre, String apellido, String telefono,String direccion, String DNI,  ArrayList<String> nombreDomicilios) {
+
+	public static void insertCliente(Connection conn, String nombre, String apellido, String telefono, String direccion,
+			String DNI, ArrayList<String> nombreDomicilios) {
 		String sql = "INSERT INTO cliente(nombre,apellido,direccion,DNI,telefono,nombreDomicilios) VALUES(?,?,?,?,?,?)";
 		String domicilios = "";
-		
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
@@ -85,14 +78,12 @@ public class ClienteBaseDatos {
 
 				if (i == nombreDomicilios.size() - 1) {
 					domicilios += nombreDomicilios.get(i);
-				}
-				else if(i<nombreDomicilios.size()-1) {
-				domicilios += nombreDomicilios.get(i) + ",";
+				} else if (i < nombreDomicilios.size() - 1) {
+					domicilios += nombreDomicilios.get(i) + ",";
 				}
 
 			}
 
-			
 			pstmt.setString(1, nombre);
 			pstmt.setString(2, apellido);
 			pstmt.setString(3, telefono);
@@ -104,7 +95,7 @@ public class ClienteBaseDatos {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	/**
 	 * Este metodo sirve para seleccionar todos los clientes de la base de datos
 	 * 
@@ -120,19 +111,16 @@ public class ClienteBaseDatos {
 			// loop through the result set
 			while (rs.next()) {
 
-				String nombre=rs.getString("Nombre");
-				String apellido=rs.getString("Apellido");
-				int telefono=rs.getInt("Telefono");
-				String direccion=rs.getString("Direccion");
+				String nombre = rs.getString("Nombre");
+				String apellido = rs.getString("Apellido");
+				int telefono = rs.getInt("Telefono");
+				String direccion = rs.getString("Direccion");
 				String dni = rs.getString("DNI");
-			
 
 				// COMO LEER LOS STRING CON , DE LAS PIZZAS Y VECES
-				
+
 				ArrayList<String> listaDomicilios = new ArrayList<String>();
 				Collections.addAll(listaDomicilios, rs.getString("nombreDomicilios").split("\\s*,\\s*"));
-
-
 
 				Cliente elegido = new Cliente(nombre, apellido, direccion, telefono, dni, listaDomicilios);
 				lista.add(elegido);
@@ -168,14 +156,5 @@ public class ClienteBaseDatos {
 			System.out.println(e.getMessage());
 		}
 	}
-	
-
-	
-	
-	
-	
-	
-	
-
 
 }

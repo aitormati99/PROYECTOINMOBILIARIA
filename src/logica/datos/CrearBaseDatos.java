@@ -24,21 +24,18 @@ public class CrearBaseDatos {
 	private Connection conn;
 	private String BDnombre;
 	private final String URL = "jdbc:sqlite:";
-	
-	
+
 	/**
 	 * Es el constructor
 	 * 
 	 * @param BDname
 	 *            el nombre de la base de datos
 	 */
-	
 
 	public CrearBaseDatos(String BDnombre) {
 		this.BDnombre = this.URL + BDnombre;
 
 	}
-
 
 	public Connection getConn() {
 		return conn;
@@ -51,97 +48,84 @@ public class CrearBaseDatos {
 	/**
 	 * Lanza el gestor
 	 */
-	
+
 	public void inicializarBD() {
 
-
 		try {
-			
-			// crear las tablas cliente, administrador, comercial, tasador y factura
+
+			// crear las tablas cliente, administrador, comercial, tasador y
+			// factura
 			ClienteBaseDatos.createClienteTable(this.conn);
 			AdministradorBaseDatos.createAdministradorTable(this.conn);
 			ComercialBaseDatos.createComercialTable(this.conn);
 			TasadorBaseDatos.createTasadorTable(this.conn);
 			FacturaBaseDatos.createFacturaTable(this.conn);
-	
-	
+
 			// insertar datos en la tabla cliente
-						ArrayList<String> domicilios = new ArrayList<String>();
-						domicilios.add("Villa1");
-						ClienteBaseDatos.insertCliente(this.conn,"Jesus","Remiro","Berio","943566578","12332122X", domicilios);
+			ArrayList<String> domicilios = new ArrayList<String>();
+			domicilios.add("Villa1");
+			ClienteBaseDatos.insertCliente(this.conn, "Jesus", "Remiro", "Berio", "943566578", "12332122X", domicilios);
 
-	
-	
-	
-						ArrayList<String> domicilios1 = new ArrayList<String>();
-						domicilios1.add("Villa2");
-						ClienteBaseDatos.insertCliente(this.conn,"Maria","Perez","Amara","949860087","76589709Z", domicilios);
-	
-	
-						// insertar datos en la tabla administrador
-						
-						AdministradorBaseDatos.insertAdministrador(this.conn,"78936696Y", 1600, 4, "peter", "aaaa");
-						AdministradorBaseDatos.insertAdministrador(this.conn,"73039996F", 2400, 8, "anebo", "bbbb");
-						AdministradorBaseDatos.insertAdministrador(this.conn,"74798774G", 1800, 6, "juancen", "cccc");
-						AdministradorBaseDatos.insertAdministrador(this.conn,"76434000A", 2000, 7, "goros", "dddd");
-						AdministradorBaseDatos.insertAdministrador(this.conn,"99995392G", 2500, 8, "anti", "eeee");
-						
-						// insertar datos en la tabla comercial
-						
-						ArrayList<String> clientes = new ArrayList<String>();
-						clientes.add("Elena");
-						clientes.add("Irene");
-						ComercialBaseDatos.insertComercial(this.conn,"73054320U", 1800, 6, clientes);
-						ComercialBaseDatos.insertComercial(this.conn,"73087690Y", 2000, 7,clientes );
-						ComercialBaseDatos.insertComercial(this.conn,"73043212D", 2100, 8, clientes);
+			ArrayList<String> domicilios1 = new ArrayList<String>();
+			domicilios1.add("Villa2");
+			ClienteBaseDatos.insertCliente(this.conn, "Maria", "Perez", "Amara", "949860087", "76589709Z", domicilios);
 
-	
-						// insertar datos en la tabla tasador
-						
-						
-						TasadorBaseDatos.insertTasador(this.conn,"74565421O", 3456, 5, 1);
-						TasadorBaseDatos.insertTasador(this.conn,"88877765P", 1234, 6,2 );
-						TasadorBaseDatos.insertTasador(this.conn,"44321234U", 1233, 4,3);
+			// insertar datos en la tabla administrador
 
-	
-	
-						// insertar datos en la tabla factura
-						Domicilio casacomprada;
-						ArrayList<String> domicilios2 = new ArrayList<String>();
-						domicilios2.add("Villa3");
-						FacturaBaseDatos.insertFactura(this.conn,1, "12-08-2009",870.000,domicilios2);
-						
-						
-					
-						ArrayList<String> domicilios3 = new ArrayList<String>();
-						domicilios3.add("Villa4");
-						FacturaBaseDatos.insertFactura(this.conn,2, "04-10-2020",1.500000, domicilios3);
-						
-				
-	
-						// Last step - Close connection
-						this.closeLink();
+			AdministradorBaseDatos.insertAdministrador(this.conn, "78936696Y", 1600, 4, "peter", "aaaa");
+			AdministradorBaseDatos.insertAdministrador(this.conn, "73039996F", 2400, 8, "anebo", "bbbb");
+			AdministradorBaseDatos.insertAdministrador(this.conn, "74798774G", 1800, 6, "juancen", "cccc");
+			AdministradorBaseDatos.insertAdministrador(this.conn, "76434000A", 2000, 7, "goros", "dddd");
+			AdministradorBaseDatos.insertAdministrador(this.conn, "99995392G", 2500, 8, "anti", "eeee");
 
-					} catch (SQLException e) {
-						
-						System.out.println("Process terminated with errors");
-					} 
+			// insertar datos en la tabla comercial
 
-				}
-	
+			ArrayList<String> clientes = new ArrayList<String>();
+			clientes.add("Elena");
+			clientes.add("Irene");
+			ComercialBaseDatos.insertComercial(this.conn, "73054320U", 1800, 6, clientes);
+			ComercialBaseDatos.insertComercial(this.conn, "73087690Y", 2000, 7, clientes);
+			ComercialBaseDatos.insertComercial(this.conn, "73043212D", 2100, 8, clientes);
+
+			// insertar datos en la tabla tasador
+
+			TasadorBaseDatos.insertTasador(this.conn, "74565421O", 3456, 5, 1);
+			TasadorBaseDatos.insertTasador(this.conn, "88877765P", 1234, 6, 2);
+			TasadorBaseDatos.insertTasador(this.conn, "44321234U", 1233, 4, 3);
+
+			// insertar datos en la tabla factura
+			Domicilio casacomprada;
+			ArrayList<String> domicilios2 = new ArrayList<String>();
+			domicilios2.add("Villa3");
+			FacturaBaseDatos.insertFactura(this.conn, 1, "12-08-2009", 870.000, domicilios2);
+
+			ArrayList<String> domicilios3 = new ArrayList<String>();
+			domicilios3.add("Villa4");
+			FacturaBaseDatos.insertFactura(this.conn, 2, "04-10-2020", 1.500000, domicilios3);
+
+			// Last step - Close connection
+			this.closeLink();
+
+		} catch (SQLException e) {
+
+			System.out.println("Process terminated with errors");
+		}
+
+	}
+
 	/**
 	 * Sirve para crear la conexion con la base de datos
 	 * 
 	 */
-	public void createLink(){
+	public void createLink() {
 		try {
 			this.conn = DriverManager.getConnection(this.BDnombre);
-	
+
 		} catch (SQLException e) {
 			System.out.println("BadAss error creating connection. " + e.getMessage());
 		}
 	}
-	
+
 	/**
 	 * Connect to a sample database
 	 *
@@ -168,7 +152,7 @@ public class CrearBaseDatos {
 	 * 
 	 */
 
-	public void closeLink(){
+	public void closeLink() {
 
 		try {
 
@@ -184,5 +168,3 @@ public class CrearBaseDatos {
 
 	}
 }
-	
-

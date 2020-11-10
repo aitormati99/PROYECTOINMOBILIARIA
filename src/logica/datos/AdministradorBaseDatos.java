@@ -24,18 +24,13 @@ public class AdministradorBaseDatos {
 	 * @param conn
 	 *            es la conexion de la base de datos
 	 */
-	
-	
-	
+
 	public static void createAdministradorTable(Connection conn) {
 
 		// SQL statement for creating a new table
-		String sql = "CREATE TABLE IF NOT EXISTS administrador (\n"
-				+ "    DNI text PRIMARY KEY,\n"
-				+ "    sueldo integer NOT NULL,\n" 
-				+ "    horarioLaboral integer NOT NULL,\n"
-				+ "    nombreUser text NOT NULL,\n" 
-				+ "    contraseña text NOT NULL\n" + ");";
+		String sql = "CREATE TABLE IF NOT EXISTS administrador (\n" + "    DNI text PRIMARY KEY,\n"
+				+ "    sueldo integer NOT NULL,\n" + "    horarioLaboral integer NOT NULL,\n"
+				+ "    nombreUser text NOT NULL,\n" + "    contraseña text NOT NULL\n" + ");";
 
 		try (Statement stmt = conn.createStatement();) {
 			// create a new table
@@ -55,7 +50,7 @@ public class AdministradorBaseDatos {
 	 * @param sueldo
 	 *            el sueldo del administrador
 	 * @param horasDia
-	 *            las horas que trabaja  el administrador
+	 *            las horas que trabaja el administrador
 	 * @param nombreUser
 	 *            el nombre del usuario del administrador
 	 * @param contraseña
@@ -93,16 +88,12 @@ public class AdministradorBaseDatos {
 
 		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
 
-			
 			while (rs.next()) {
-				
+
 				Administrador seleccionado = new Administrador(rs.getString("DNI"), rs.getInt("sueldo"),
 						rs.getInt("horarioLaboral"), rs.getString("nombreUser"), rs.getString("contraseña"));
 				lista.add(seleccionado);
 
-
-				
-				
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -111,8 +102,4 @@ public class AdministradorBaseDatos {
 		return lista;
 	}
 
-	
-	
 }
-
-

@@ -1,7 +1,5 @@
 package logica.datos;
 
-
-
 import java.sql.Connection;
 
 import java.sql.DriverManager;
@@ -18,7 +16,6 @@ import java.util.Date;
 import logica.negocios.Comercial;
 
 import java.text.SimpleDateFormat;
-
 
 /**
  * Es la clase donde estan los diferentes metodos que corresponden a la tabla de
@@ -39,14 +36,10 @@ public class ComercialBaseDatos {
 
 	public static void createComercialTable(Connection conn) throws SQLException {
 
-		
 		// SQL statement for creating a new table
-		String sql = "CREATE TABLE IF NOT EXISTS repartidor (\n" 
-				+ "    DNI text PRIMARY KEY,\n"
-				+ "    sueldo integer NOT NULL,\n" 
-				+ "    horarioLaboral integer NOT NULL,\n" 
-				+ "    nombreClientes text NOT NULL\n"
-				+ " );";
+		String sql = "CREATE TABLE IF NOT EXISTS repartidor (\n" + "    DNI text PRIMARY KEY,\n"
+				+ "    sueldo integer NOT NULL,\n" + "    horarioLaboral integer NOT NULL,\n"
+				+ "    nombreClientes text NOT NULL\n" + " );";
 
 		try (Statement stmt = conn.createStatement()) {
 			// create a new table
@@ -55,6 +48,7 @@ public class ComercialBaseDatos {
 			System.out.println(e.getMessage());
 		}
 	}
+
 	/**
 	 * Este metodo sirve para insertar los comerciales en la base de datos
 	 * 
@@ -69,38 +63,41 @@ public class ComercialBaseDatos {
 	 * @throws SQLException
 	 *             si no se puede realizar salta la excepción sqlexception
 	 */
-	public static void insertComercial(Connection conn,String DNI, int sueldo, int horarioLaboral, ArrayList<String> clientes){
+	public static void insertComercial(Connection conn, String DNI, int sueldo, int horarioLaboral,
+			ArrayList<String> clientes) {
 		String sql = "INSERT INTO repartidor(DNI,sueldo, horarioLaboral,nombreClientes) VALUES(?,?,?,?)";
 		String nombreClientes = "";
-		
+
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
 			for (int i = 0; i < clientes.size(); i++) {
 
 				if (i == clientes.size() - 1) {
 					nombreClientes += clientes.get(i);
-				} else if(i<clientes.size()-1) {
+				} else if (i < clientes.size() - 1) {
 					nombreClientes += clientes.get(i) + ",";
 
 				}
 
 			}
-		
+
 			pstmt.setString(1, DNI);
 			pstmt.setInt(2, sueldo);
 			pstmt.setInt(3, horarioLaboral);
-			pstmt.setString(4,nombreClientes);
+			pstmt.setString(4, nombreClientes);
 			pstmt.execute();
 
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 	}
+
 	/**
 	 * Es el metodo que selecciona todos los comerciales de la base de datos
 	 * 
-	 * @param conn es la conexion de la base de datos
-	 *  
+	 * @param conn
+	 *            es la conexion de la base de datos
+	 * 
 	 * @return devuelve todos los comerciales de la base de datos en un array
 	 */
 	public static ArrayList<Comercial> selectAllComercial(Connection conn) {
@@ -108,9 +105,7 @@ public class ComercialBaseDatos {
 		ArrayList<Comercial> lista = new ArrayList<Comercial>();
 		ArrayList<String> listaClientes = new ArrayList<String>();
 
-
-		try (Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(sql)) {
+		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
 
 			// loop through the result set
 			while (rs.next()) {
@@ -118,12 +113,11 @@ public class ComercialBaseDatos {
 				String dni = rs.getString("DNI");
 				int sueldo = rs.getInt("sueldo");
 				int horas = rs.getInt("horarioLaboral");
-				
 
 				// COMO LEER LOS STRING CON , DE LAS PIZZAS Y VECES
 				Collections.addAll(listaClientes, rs.getString("nombreClientes").split("\\s*,\\s*"));
 
-				Comercial elegido = new Comercial (dni, sueldo, horas,listaClientes);
+				Comercial elegido = new Comercial(dni, sueldo, horas, listaClientes);
 				lista.add(elegido);
 
 			}
@@ -133,14 +127,16 @@ public class ComercialBaseDatos {
 
 		return lista;
 	}
-	
+
 	/**
 	 * Es el metodo que modifica los comerciales de la base de datos
 	 * 
-	 * @param conn es la conexion de la base de datos
-	 *  
-	 * @param conn es la conexion de la base de datos
-	 *  
+	 * @param conn
+	 *            es la conexion de la base de datos
+	 * 
+	 * @param conn
+	 *            es la conexion de la base de datos
+	 * 
 	 * @param DNI
 	 *            es el dni del comercial
 	 * @param sueldo
@@ -150,28 +146,29 @@ public class ComercialBaseDatos {
 	 * @param cadCarne
 	 *            los nombres de los clioentes al que atiende el comercial
 	 */
-	public static void updateComercial(Connection conn,String DNI, int sueldo, int horarioLaboral,ArrayList<String> clientes){
+	public static void updateComercial(Connection conn, String DNI, int sueldo, int horarioLaboral,
+			ArrayList<String> clientes) {
 		String sql = "UPDATE repartidor SET sueldo = ? , horarioLaboral = ? , clientes= ? WHERE DNI = ?";
 		String nombreClientes = "";
-		
+
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
 			for (int i = 0; i < clientes.size(); i++) {
 
 				if (i == clientes.size() - 1) {
 					nombreClientes += clientes.get(i);
-				} else if(i<clientes.size()-1) {
+				} else if (i < clientes.size() - 1) {
 					nombreClientes += clientes.get(i) + ",";
 
 				}
 
 			}
-		
+
 			// set the corresponding param
 			pstmt.setString(1, DNI);
 			pstmt.setDouble(2, sueldo);
-			pstmt.setInt(3,horarioLaboral);
-			pstmt.setString(4, nombreClientes );
+			pstmt.setInt(3, horarioLaboral);
+			pstmt.setString(4, nombreClientes);
 
 			// update
 			pstmt.executeUpdate();
@@ -179,16 +176,18 @@ public class ComercialBaseDatos {
 			System.out.println(e.getMessage());
 		}
 	}
+
 	/**
 	 * elimina el comercial
 	 * 
-	 * @param conn es la conexion de la base de datos
+	 * @param conn
+	 *            es la conexion de la base de datos
 	 * 
 	 * @param dni
 	 *            el dni del comercial
 	 */
 
-	public static void delete(Connection conn,String dni) {
+	public static void delete(Connection conn, String dni) {
 		String sql = "DELETE FROM comercial WHERE DNI = ?";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -203,6 +202,5 @@ public class ComercialBaseDatos {
 			System.out.println(e.getMessage());
 		}
 	}
-
 
 }

@@ -1,7 +1,5 @@
 package logica.datos;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,7 +18,6 @@ import logica.negocios.Administrador;
 import logica.negocios.Domicilio;
 import logica.negocios.Factura;
 
-
 /**
  * Es la clase donde estan los diferentes metodos que corresponden a la tabla de
  * los administradores que estan en la base de datos
@@ -30,11 +27,6 @@ import logica.negocios.Factura;
  */
 public class FacturaBaseDatos {
 
-	
-	
-	
-	
-	
 	/**
 	 * Este metodo crea la tabla de las facturas
 	 * 
@@ -45,12 +37,9 @@ public class FacturaBaseDatos {
 		;
 
 		// SQL statement for creating a new table
-		String sql = "CREATE TABLE IF NOT EXISTS factura (\n" 
-				+ "    numFac integer PRIMARY KEY,\n"
-				+ "    fecha text NOT NULL,\n" 
-				+ "	   coste integer NOT NULL,\n" 
-				+ "    nombreDomicilios text NOT NULL \n"
-				+ ");";
+		String sql = "CREATE TABLE IF NOT EXISTS factura (\n" + "    numFac integer PRIMARY KEY,\n"
+				+ "    fecha text NOT NULL,\n" + "	   coste integer NOT NULL,\n"
+				+ "    nombreDomicilios text NOT NULL \n" + ");";
 
 		try (Statement stmt = conn.createStatement()) {
 			// create a new table
@@ -59,7 +48,7 @@ public class FacturaBaseDatos {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	/**
 	 * Es para insertar los datos de las facturas
 	 * 
@@ -75,7 +64,8 @@ public class FacturaBaseDatos {
 	 * @param domicilios
 	 *            es el nombre de los domicilios comprados
 	 */
-	public static void insertFactura(Connection conn, int numFac, String fecha, double coste, ArrayList<String> domicilios) {
+	public static void insertFactura(Connection conn, int numFac, String fecha, double coste,
+			ArrayList<String> domicilios) {
 		String sql = "INSERT INTO factura(numFac,fecha,coste,nombreDomicilios) VALUES(?,?,?,?)";
 		String nombreDomicilios = "";
 
@@ -85,7 +75,7 @@ public class FacturaBaseDatos {
 
 				if (i == domicilios.size() - 1) {
 					nombreDomicilios += domicilios.get(i);
-				} else if(i<domicilios.size()-1) {
+				} else if (i < domicilios.size() - 1) {
 					nombreDomicilios += domicilios.get(i) + ",";
 
 				}
@@ -101,7 +91,7 @@ public class FacturaBaseDatos {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	/**
 	 * selecciona todas las facturas
 	 * 
@@ -153,6 +143,4 @@ public class FacturaBaseDatos {
 		return lista;
 	}
 
-	
-	
 }

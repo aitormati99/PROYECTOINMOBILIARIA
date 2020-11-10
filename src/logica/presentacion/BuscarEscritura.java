@@ -17,8 +17,6 @@ public class BuscarEscritura extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 
-
-
 	/**
 	 * Create the frame.
 	 */
@@ -30,27 +28,27 @@ public class BuscarEscritura extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblBuscarEscrituraPor = new JLabel("Buscar Escritura por Codigo");
 		lblBuscarEscrituraPor.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblBuscarEscrituraPor.setBounds(155, 69, 397, 53);
 		contentPane.add(lblBuscarEscrituraPor);
-		
+
 		textField = new JTextField();
 		textField.setColumns(10);
 		textField.setBounds(187, 196, 318, 26);
 		contentPane.add(textField);
-		
+
 		JLabel lblCod = new JLabel("Cod:");
 		lblCod.setForeground(Color.BLACK);
 		lblCod.setFont(new Font("Tahoma", Font.BOLD, 23));
 		lblCod.setBounds(89, 196, 72, 20);
 		contentPane.add(lblCod);
-		
+
 		JButton button = new JButton("OK");
 		button.setBounds(519, 254, 115, 29);
 		contentPane.add(button);
-		
+
 		JButton btnSalir = new JButton("SALIR");
 		btnSalir.setBounds(519, 386, 115, 29);
 		contentPane.add(btnSalir);
