@@ -38,7 +38,7 @@ public class TasadorBaseDatos {
 	public static void createTasadorTable(Connection conn) throws SQLException {
 
 		// SQL statement for creating a new table
-		String sql = "CREATE TABLE IF NOT EXISTS repartidor (\n" + "    DNI text PRIMARY KEY,\n"
+		String sql = "CREATE TABLE IF NOT EXISTS tasador (\n" + "    DNI text PRIMARY KEY,\n"
 				+ "    sueldo integer NOT NULL,\n" + "    horarioLaboral integer NOT NULL,\n"
 				+ "    contadorFacturas integer NOT NULL\n" + " );";
 
@@ -65,7 +65,7 @@ public class TasadorBaseDatos {
 	 */
 	public static void insertTasador(Connection conn, String DNI, int sueldo, int horarioLaboral,
 			int contadorFacturas) {
-		String sql = "INSERT INTO repartidor(DNI,sueldo, horarioLaboral,contadorFacturas) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO tasador(DNI,sueldo, horarioLaboral,contadorFacturas) VALUES(?,?,?,?)";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setString(1, DNI);
@@ -132,7 +132,7 @@ public class TasadorBaseDatos {
 	 */
 	public static void updateTasador(Connection conn, String DNI, int sueldo, int horarioLaboral,
 			int contadorFacturas) {
-		String sql = "UPDATE repartidor SET sueldo = ? , horarioLaboral = ? , contadorFacturas= ? WHERE DNI = ?";
+		String sql = "UPDATE tasador SET sueldo = ? , horarioLaboral = ? , contadorFacturas= ? WHERE DNI = ?";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 

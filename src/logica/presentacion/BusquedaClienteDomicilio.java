@@ -41,13 +41,6 @@ public class BusquedaClienteDomicilio extends JFrame {
 		label_1.setBounds(58, 182, 72, 20);
 		contentPane.add(label_1);
 
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 21));
-		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setIcon(new ImageIcon("imagenes/clientes.jpg"));
-		lblNewLabel.setBounds(0, 113, 661, 344);
-		contentPane.add(lblNewLabel);
-
 		textField = new JTextField();
 		textField.setColumns(10);
 		textField.setBounds(163, 182, 318, 26);

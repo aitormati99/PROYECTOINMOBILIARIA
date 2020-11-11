@@ -42,15 +42,16 @@ public class Login extends JFrame {
 	private ArrayList<Factura> facturasBD = new ArrayList<Factura>();
 	private ArrayList<Comercial> comercialesBD = new ArrayList<Comercial>();
 	private ArrayList<Tasador> tasadoresBD = new ArrayList<Tasador>();
-	private PantallaInicial padre;
+	private PantallaInicial papi;
 
 	/**
-	 * Create the frame Login que es donde introduce el administrador el nombre
-	 * de usuario y contraseña y le da acceso al menu del administrador
+	 * Creo el jframe login que introduzco el usuario y la contraseña del
+	 * administrador y accedo al menu del administrador
+	 * 
 	 */
 
 	public Login(ArrayList<Cliente> clientes, ArrayList<Factura> facturas, ArrayList<Administrador> admin,
-			ArrayList<Comercial> comerciales, ArrayList<Tasador> tasadores, PantallaInicial padre) {
+			ArrayList<Comercial> comerciales, ArrayList<Tasador> tasadores, PantallaInicial papi) {
 		setResizable(false);
 
 		this.clientesBD = clientes;
@@ -58,7 +59,7 @@ public class Login extends JFrame {
 		this.facturasBD = facturas;
 		this.comercialesBD = comerciales;
 		this.tasadoresBD = tasadores;
-		this.padre = padre;
+		this.papi = papi;
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 658, 436);
@@ -100,7 +101,7 @@ public class Login extends JFrame {
 					if (encontrado) {
 
 						MenuAdministrador menuAdmi = new MenuAdministrador(usuario, password, clientes, facturas, admin,
-								comerciales, tasadores, padre);
+								comerciales, tasadores, papi);
 						menuAdmi.setVisible(true);
 						Login.this.dispose();
 					}
@@ -122,7 +123,7 @@ public class Login extends JFrame {
 				// CUANDO LE DAMOS A CANCEL
 
 				Login.this.dispose();
-				padre.setVisible(true);
+				papi.setVisible(true);
 
 			}
 		});
@@ -136,20 +137,17 @@ public class Login extends JFrame {
 	}
 
 	/**
-	 * Este metodo sirve para comprobar si existe el nombre usuario y contraseña
-	 * introducido por pantalla para ello mirara en la base de datos en el caso
-	 * de existir, le dara acceso a la pantalla adminstrador, y en el caso de
-	 * que no, le monstrara un mensaje indicandole que el usuario o contraseña
-	 * no existe.
+	 * Hago este metodo para comprobar si existe el nombre y la contraseña del
+	 * usuario, en el caso de que exista se introduce en el menu administrador,
+	 * y en caso negativo se le muestra un mensaje de usuario incorrecto.
 	 * 
 	 * @param usuario
 	 *            el nombre usuario introducido por pantalla
 	 * @param password
 	 *            la contraseña introducida por pantalla
-	 * @return devolvera un true en caso de existir y un false en caso de que no
+	 * @return true existe false no existe
 	 * @throws UsuarioNoExiste
-	 *             es la clase en la que se implementa la excepcion del usuario
-	 *             no existente
+	 *             la excepcion del usuario no existente
 	 */
 	public boolean comprobarAdministrador(String usuario, String password) throws UsuarioNoExiste {
 

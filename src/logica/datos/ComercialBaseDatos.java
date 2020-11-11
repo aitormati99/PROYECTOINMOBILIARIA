@@ -37,7 +37,7 @@ public class ComercialBaseDatos {
 	public static void createComercialTable(Connection conn) throws SQLException {
 
 		// SQL statement for creating a new table
-		String sql = "CREATE TABLE IF NOT EXISTS repartidor (\n" + "    DNI text PRIMARY KEY,\n"
+		String sql = "CREATE TABLE IF NOT EXISTS comercial (\n" + "    DNI text PRIMARY KEY,\n"
 				+ "    sueldo integer NOT NULL,\n" + "    horarioLaboral integer NOT NULL,\n"
 				+ "    nombreClientes text NOT NULL\n" + " );";
 
@@ -65,7 +65,7 @@ public class ComercialBaseDatos {
 	 */
 	public static void insertComercial(Connection conn, String DNI, int sueldo, int horarioLaboral,
 			ArrayList<String> clientes) {
-		String sql = "INSERT INTO repartidor(DNI,sueldo, horarioLaboral,nombreClientes) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO comercial(DNI,sueldo, horarioLaboral,nombreClientes) VALUES(?,?,?,?)";
 		String nombreClientes = "";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -148,7 +148,7 @@ public class ComercialBaseDatos {
 	 */
 	public static void updateComercial(Connection conn, String DNI, int sueldo, int horarioLaboral,
 			ArrayList<String> clientes) {
-		String sql = "UPDATE repartidor SET sueldo = ? , horarioLaboral = ? , clientes= ? WHERE DNI = ?";
+		String sql = "UPDATE comercial SET sueldo = ? , horarioLaboral = ? , clientes= ? WHERE DNI = ?";
 		String nombreClientes = "";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {

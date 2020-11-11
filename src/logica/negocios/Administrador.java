@@ -6,19 +6,17 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import javax.rmi.CORBA.Util;
-
-import interfaces.ICalcular;
 import utilidades.Utilidades;
 
 /**
- * Represents an Administrador
+ * Represents an Administrador extends from Empleado
  * 
- * @author Alumno Aitor Matilla
+ * @author Aitor
  * @version 1.0
  * @since 2020
  */
 
-public class Administrador extends Empleado implements ICalcular<Administrador> {
+public class Administrador extends Empleado {
 
 	private String usuario;
 	private String contrasenya;
@@ -27,7 +25,6 @@ public class Administrador extends Empleado implements ICalcular<Administrador> 
 	 * Represents Administrador.
 	 */
 	public Administrador() {
-		super();
 
 	}
 
@@ -88,12 +85,6 @@ public class Administrador extends Empleado implements ICalcular<Administrador> 
 	 */
 	public void setContrasenya(String contrasenya) {
 		this.contrasenya = contrasenya;
-	}
-
-	@Override
-	public ArrayList<Integer> calcular(ArrayList<Administrador> t) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

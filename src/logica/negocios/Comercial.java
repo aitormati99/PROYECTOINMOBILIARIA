@@ -2,16 +2,14 @@ package logica.negocios;
 
 import java.util.ArrayList;
 
-import interfaces.ICalcular;
-
 /**
- * Represents a Comercial.
+ * Represents a Comercial extends from Empleado.
  * 
- * @author Alumno Aitor Matilla
+ * @author Aitor
  * @version 1.0
  * @since 2020
  */
-public class Comercial extends Empleado implements ICalcular<Comercial> {
+public class Comercial extends Empleado {
 
 	private ArrayList<String> clientes;
 
@@ -26,8 +24,6 @@ public class Comercial extends Empleado implements ICalcular<Comercial> {
 	/**
 	 * Creates a Comercial.
 	 * 
-	 * @param nombre
-	 *            The Comercial's nombre.
 	 * @param dni
 	 *            The Comercial's dni.
 	 * @param sueldo
@@ -59,12 +55,6 @@ public class Comercial extends Empleado implements ICalcular<Comercial> {
 	 */
 	public void setClientes(ArrayList<String> clientes) {
 		this.clientes = clientes;
-	}
-
-	@Override
-	public ArrayList<Integer> calcular(ArrayList<Comercial> t) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

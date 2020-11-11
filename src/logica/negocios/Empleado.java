@@ -3,7 +3,8 @@ package logica.negocios;
 /**
  * Represents Empleado
  * 
- * @author Alumno Aitor Matilla
+ * @author Alumno Aitor Creo el objeto empleado que es el padre de todos los
+ *         empleados que serán tasador comercial y administrador.
  * @version 1.0
  * @since 2020
  */
@@ -17,15 +18,12 @@ public abstract class Empleado {
 	 * Represents Empleado.
 	 */
 	public Empleado() {
-		super();
 
 	}
 
 	/**
 	 * Creates a Empleado.
 	 * 
-	 * @param nombre
-	 *            The Empleado's nombre.
 	 * @param dni
 	 *            The Empleado's dni.
 	 * @param sueldo
@@ -72,7 +70,7 @@ public abstract class Empleado {
 	/**
 	 * Sets the Empleado's sueldo.
 	 * 
-	 * @param nombre
+	 * @param sueldo
 	 *            A string containing the Empleado's sueldo.
 	 */
 	public void setSueldo(int sueldo) {

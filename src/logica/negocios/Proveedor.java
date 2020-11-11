@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Represents Proveedor
  * 
- * @author Alumno Aitor Matilla
+ * @author Alumno Aitor 
  * @version 1.0
  * @since 2020
  */
@@ -19,7 +19,6 @@ public class Proveedor {
 	 * Represents Proveedor.
 	 */
 	public Proveedor() {
-		super();
 		// TODO Auto-generated constructor stub
 	}
 

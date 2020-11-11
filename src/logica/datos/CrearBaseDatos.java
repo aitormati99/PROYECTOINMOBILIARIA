@@ -72,6 +72,10 @@ public class CrearBaseDatos {
 
 			// insertar datos en la tabla administrador
 
+			ArrayList<String> administrador = new ArrayList<String>();
+			administrador.add("peter");
+			administrador.add("marihuana");
+			
 			AdministradorBaseDatos.insertAdministrador(this.conn, "78936696Y", 1600, 4, "peter", "aaaa");
 			AdministradorBaseDatos.insertAdministrador(this.conn, "73039996F", 2400, 8, "anebo", "bbbb");
 			AdministradorBaseDatos.insertAdministrador(this.conn, "74798774G", 1800, 6, "juancen", "cccc");

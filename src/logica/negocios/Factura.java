@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Represents Factura
  * 
- * @author Alumno Aitor Matilla
+ * @author Alumno Aitor
  * @version 1.0
  * @since 2020
  */
@@ -21,7 +21,6 @@ public class Factura {
 	 * Represents Escritura.
 	 */
 	public Factura() {
-		super();
 
 	}
 

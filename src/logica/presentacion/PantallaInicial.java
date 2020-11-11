@@ -57,11 +57,7 @@ public class PantallaInicial extends JFrame {
 	}
 
 	/**
-	 * Create the frame pantalla inicial, en la que se le pide al usuario que en
-	 * caso de ser un administrador pulse ese boton, y en el caso de ser un
-	 * cliente, pulse el otro. Si pulsa el boton administrador le mostrara la
-	 * pantalla login y en el caso de pulsar el boton cliente, le mostrara el
-	 * menu cliente
+	 * Se crea el jframe pantalla incial, con dos botones, administrador y cliente, si pulsa el boton de admin se le muestra la pantalla login y si pulsa el boton cliente se le muestra el menu cliente.
 	 */
 
 	public PantallaInicial() {
@@ -135,9 +131,6 @@ public class PantallaInicial extends JFrame {
 		btnSalir.setBounds(277, 408, 115, 29);
 		contentPane.add(btnSalir);
 
-		// JLabel lblNewLabel = new JLabel("New label");
-		// lblNewLabel.setIcon(new ImageIcon("imagenes/Villa1.jpg"));
-		// lblNewLabel.setBounds(-83, -165, 1344, 794);
-		// contentPane.add(lblNewLabel);
+
 	}
 }

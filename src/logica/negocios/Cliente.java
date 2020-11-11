@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Represents a cliente.
  * 
- * @author Alumno Aitor Matilla
+ * @author Alumno Aitor
  * @version 1.0
  * @since 2020
  */
@@ -22,7 +22,6 @@ public class Cliente {
 	 * Represents Cliente.
 	 */
 	public Cliente() {
-		super();
 
 	}
 
