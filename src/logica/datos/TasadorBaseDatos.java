@@ -19,8 +19,6 @@ import logica.negocios.Tasador;
 import java.text.SimpleDateFormat;
 
 /**
- * Es la clase donde estan los diferentes metodos que corresponden a la tabla de
- * los repartidores que estan en la base de datos
  * 
  * @author Aitor
  *
@@ -29,10 +27,10 @@ import java.text.SimpleDateFormat;
 public class TasadorBaseDatos {
 
 	/**
-	 * Este metodo crea la tabla de los comerciales
+	 * creo la tabla de los comerciales
 	 * 
 	 * @throws SQLException
-	 *             si no se puede realizar salta la excepción sqlexception
+	 *             si no se hace salta la excepción
 	 */
 
 	public static void createTasadorTable(Connection conn) throws SQLException {
@@ -51,17 +49,18 @@ public class TasadorBaseDatos {
 	}
 
 	/**
-	 * Este metodo sirve para insertar los repartidores en la base de datos
+	 * insertar los tasadores en la bd
 	 * 
 	 * @param DNI
-	 *            es el dni del tasador
+	 *            dni del tasador
 	 * @param sueldo
-	 *            es el sueldo del tasador
+	 *            sueldo del tasador
 	 * @param horarioLaboral
-	 *            es las horas qe trabaja al dia el tasador
+	 *            horas que trabaja el tasador
 	 * @param contadorFacturas
-	 *            el numero de facturas del tasador * @throws SQLException si no
-	 *            se puede realizar salta la excepción sqlexception
+	 *            numero de facturas del tasador
+	 * @throws SQLException
+	 *             si no se hace salta la excepción
 	 */
 	public static void insertTasador(Connection conn, String DNI, int sueldo, int horarioLaboral,
 			int contadorFacturas) {
@@ -80,16 +79,15 @@ public class TasadorBaseDatos {
 	}
 
 	/**
-	 * Es el metodo que selecciona todos los tasadores de la base de datos
+	 * selecciona todos los tasadores de la bd
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
-	 * 
-	 * @return devuelve todos los tasadores de la base de datos en un array
+	 *            conexion con la bd
+	 * @return devuelve tasadores de la bd
 	 */
 	public static ArrayList<Tasador> selectAllTasador(Connection conn) {
-		String sql = "SELECT DNI, sueldo, horarioLaboral,nombreClientes FROM repartidor";
-		ArrayList<Tasador> lista = new ArrayList<Tasador>();
+		String sql = "SELECT DNI, sueldo, horarioLaboral,nombreClientes FROM tasador";
+		ArrayList<Tasador> list = new ArrayList<Tasador>();
 
 		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
 
@@ -101,34 +99,34 @@ public class TasadorBaseDatos {
 				int horas = rs.getInt("horarioLaboral");
 				int contadorFacturas = rs.getInt("contadorFacturas");
 
-				Tasador elegido = new Tasador(dni, sueldo, horas, contadorFacturas);
-				lista.add(elegido);
+				Tasador select = new Tasador(dni, sueldo, horas, contadorFacturas);
+				list.add(select);
 
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 
-		return lista;
+		return list;
 	}
 
 	/**
-	 * Es el metodo que modifica los tasadores de la base de datos
+	 * modifica los tasadores de la bd
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            conexion de la bd
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            conexion de la bd
 	 * 
 	 * @param DNI
-	 *            es el dni del tasador
+	 *            dni del tasador
 	 * @param sueldo
-	 *            es el sueldo del tasador
+	 *            sueldo del tasador
 	 * @param horasDia
-	 *            es las horas qe trabaja al dia el tasador
+	 *            horas que trabaja el tasador
 	 * @param contadorFacturas
-	 *            las facturas de los tasadores
+	 *            facturas de los tasadores
 	 */
 	public static void updateTasador(Connection conn, String DNI, int sueldo, int horarioLaboral,
 			int contadorFacturas) {
@@ -153,10 +151,10 @@ public class TasadorBaseDatos {
 	 * elimina el tasador
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            conexion de la bd
 	 * 
 	 * @param dni
-	 *            el dni del tasador
+	 *            dni del tasador
 	 */
 
 	public static void delete(Connection conn, String dni) {

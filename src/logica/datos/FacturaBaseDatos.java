@@ -19,8 +19,6 @@ import logica.negocios.Domicilio;
 import logica.negocios.Factura;
 
 /**
- * Es la clase donde estan los diferentes metodos que corresponden a la tabla de
- * los administradores que estan en la base de datos
  * 
  * @author Aitor
  *
@@ -28,10 +26,10 @@ import logica.negocios.Factura;
 public class FacturaBaseDatos {
 
 	/**
-	 * Este metodo crea la tabla de las facturas
+	 * creo la tabla de las facturas
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            conexion de la bd
 	 */
 	public static void createFacturaTable(Connection conn) {
 		;
@@ -50,19 +48,19 @@ public class FacturaBaseDatos {
 	}
 
 	/**
-	 * Es para insertar los datos de las facturas
+	 * insertar datos de las facturas
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            conexion de la bd
 	 * 
 	 * @param numFac
-	 *            el numero de la factura que sirve para identificarla
+	 *            numero de la factura
 	 * @param fecha
-	 *            es la fecha de la factura
+	 *            fecha de la factura
 	 * @param coste
-	 *            es el coste total de la factura
+	 *            coste total de la factura
 	 * @param domicilios
-	 *            es el nombre de los domicilios comprados
+	 *            nombre de los domicilios comprados
 	 */
 	public static void insertFactura(Connection conn, int numFac, String fecha, double coste,
 			ArrayList<String> domicilios) {
@@ -93,16 +91,16 @@ public class FacturaBaseDatos {
 	}
 
 	/**
-	 * selecciona todas las facturas
+	 * selecciona las facturas
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            conexion de la bd
 	 * 
-	 * @return devuelve las facturas de la base de datos en un array list
+	 * @return devuelve las facturas de la bd
 	 */
 	public static ArrayList<Factura> selectAllFactura(Connection conn) {
 		String sql = "SELECT numFac, fecha, coste, nombreDomicilios FROM factura";
-		ArrayList<Factura> lista = new ArrayList<Factura>();
+		ArrayList<Factura> list = new ArrayList<Factura>();
 		String fecha = null;
 		int numfac = 0;
 		int coste = 0;
@@ -110,14 +108,13 @@ public class FacturaBaseDatos {
 
 		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
 
-			// loop through the result set
 			while (rs.next()) {
 
 				numfac = rs.getInt("numFac");
 				fecha = rs.getString("fecha");
 				coste = rs.getInt("coste");
 
-				// COMO LEER LOS STRING CON , DE LAS PIZZAS Y VECES
+				// COMO LEER LOS STRING DE LOS DOMICILIOS
 				Collections.addAll(listaDomicilios, rs.getString("nombreDomicilios").split("\\s*,\\s*"));
 
 				Date fechaFac = null;
@@ -131,8 +128,8 @@ public class FacturaBaseDatos {
 
 				// pasar a arraylist
 
-				Factura elegida = new Factura(fechaFac, coste, numfac, listaDomicilios);
-				lista.add(elegida);
+				Factura select = new Factura(fechaFac, coste, numfac, listaDomicilios);
+				list.add(select);
 
 			}
 
@@ -140,7 +137,7 @@ public class FacturaBaseDatos {
 			System.out.println(e.getMessage());
 		}
 
-		return lista;
+		return list;
 	}
 
 }

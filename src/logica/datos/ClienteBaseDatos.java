@@ -17,8 +17,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 /**
- * Esta clase es todo lo que corresponde para la tabla de los clientes de la
- * base de datos
  * 
  * @author Aitor
  *
@@ -26,10 +24,10 @@ import java.sql.ResultSet;
 public class ClienteBaseDatos {
 
 	/**
-	 * Este metodo sirve para crear la tabla de los clientes
+	 * metodo para crear la tabla de clientes
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            conexion con la base de datos
 	 */
 	public static void createClienteTable(Connection conn) {
 
@@ -49,20 +47,20 @@ public class ClienteBaseDatos {
 	}
 
 	/**
-	 * Este metodo sirve para insertar los clientes en la base de datos
+	 * insertar clientes a la bd
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            conexion con la base de datos
 	 * @param DNI
-	 *            es el dni del cliente
+	 *            dni del cliente
 	 * @param nombre
-	 *            es el nombre del cliente
+	 *            nombre del cliente
 	 * @param apellido
-	 *            es el apellido del cliente
+	 *            apellido del cliente
 	 * @param direccion
-	 *            es la direccion del cliente
+	 *            direccion del cliente
 	 * @param telefono
-	 *            es el telefono del cliente
+	 *            telefono del cliente
 	 * @param casas
 	 *            es una lista de las casas que compra el cliente
 	 */
@@ -97,18 +95,17 @@ public class ClienteBaseDatos {
 	}
 
 	/**
-	 * Este metodo sirve para seleccionar todos los clientes de la base de datos
+	 * seleccionar todos los clientes de la bd
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
-	 * @return devuelve todos los clientes de la base de datos
+	 *            conexion con la base de datos
+	 * @return devuelve los clientes de la bd
 	 */
 	public static ArrayList<Cliente> selectAllCliente(Connection conn) {
-		String sql = "SELECT nombre,apellido,telefono,direccion,DNI,nSombreDomicilios FROM cliente";
-		ArrayList<Cliente> lista = new ArrayList<Cliente>();
+		String sql = "SELECT nombre,apellido,telefono,direccion,DNI,nombreDomicilios FROM cliente";
+		ArrayList<Cliente> list = new ArrayList<Cliente>();
 		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
 
-			// loop through the result set
 			while (rs.next()) {
 
 				String nombre = rs.getString("Nombre");
@@ -117,39 +114,38 @@ public class ClienteBaseDatos {
 				String direccion = rs.getString("Direccion");
 				String dni = rs.getString("DNI");
 
-				// COMO LEER LOS STRING CON , DE LAS PIZZAS Y VECES
+				// COMO LEER LOS STRING DE LOS DOMICILIOS
 
 				ArrayList<String> listaDomicilios = new ArrayList<String>();
 				Collections.addAll(listaDomicilios, rs.getString("nombreDomicilios").split("\\s*,\\s*"));
 
 				Cliente elegido = new Cliente(nombre, apellido, direccion, telefono, dni, listaDomicilios);
-				lista.add(elegido);
+				list.add(elegido);
 
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 
-		return lista;
+		return list;
 	}
 
 	/**
-	 * Este metodo sirve para eliminar un cliente de la base de datos
+	 * eliminar un cliente de la base de datos
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            conexion con la base de datos
 	 * @param dni
-	 *            es el dni del cliente
+	 *            dni del cliente
 	 */
 	public static void delete(Connection conn, String dni) {
 		String sql = "DELETE FROM cliente WHERE DNI = ?";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-			// set the corresponding param
 			pstmt.setString(1, dni);
 
-			// execute the delete statement
+			// delete statement
 			pstmt.executeUpdate();
 
 		} catch (SQLException e) {

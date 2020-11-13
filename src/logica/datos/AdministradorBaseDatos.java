@@ -46,20 +46,20 @@ public class AdministradorBaseDatos {
 	 * @param conn
 	 *            la conexion con la base de datos
 	 * @param DNI
-	 *             dni del admin
+	 *            dni del admin
 	 * @param sueldo
-	 *             sueldo del admin
+	 *            sueldo del admin
 	 * @param horarioLaboral
-	 *             horas  trabaja el admin
+	 *            horas trabaja el admin
 	 * @param nombreUsuario
-	 *             nombre  usuario del admin
+	 *            nombre usuario del admin
 	 * @param password
-	 *             password del administrador
+	 *            password del administrador
 	 * @throws SQLException
-	 *             si no se  realiza salta la excepción 
+	 *             si no se realiza salta la excepción
 	 */
-	public static void insertAdministrador(Connection conn, String DNI, int sueldo, int horarioLaboral, String nombreUsuario,
-			String password) throws SQLException {
+	public static void insertAdministrador(Connection conn, String DNI, int sueldo, int horarioLaboral,
+			String nombreUsuario, String password) throws SQLException {
 		String sql = "INSERT INTO administrador(DNI,sueldo,horarioLaboral,nombreUsuario,password) VALUES(?,?,?,?,?)";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -79,8 +79,8 @@ public class AdministradorBaseDatos {
 	 * con esto selecciono a los admin que estan en la bd
 	 * 
 	 * @param conn
-	 *             conexion con la base de datos
-	 * @return devuelve un arrayList de los administradores  
+	 *            conexion con la base de datos
+	 * @return devuelve un arrayList de los administradores
 	 */
 	public static ArrayList<Administrador> selectAllAdministrador(Connection conn) {
 		String sql = "SELECT DNI,sueldo,horarioLaboral,nombreUsuario,password FROM administrador";
