@@ -19,10 +19,10 @@ import logica.negocios.Administrador;
 public class AdministradorBaseDatos {
 
 	/**
-	 * Este metodo crea la tabla de los administradores
+	 * Con este metodo creo la tabla de los administradores
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            es la conexion con la base de datos
 	 */
 
 	public static void createAdministradorTable(Connection conn) {
@@ -30,7 +30,7 @@ public class AdministradorBaseDatos {
 		// SQL statement for creating a new table
 		String sql = "CREATE TABLE IF NOT EXISTS administrador (\n" + "    DNI text PRIMARY KEY,\n"
 				+ "    sueldo integer NOT NULL,\n" + "    horarioLaboral integer NOT NULL,\n"
-				+ "    nombreUser text NOT NULL,\n" + "    contraseña text NOT NULL\n" + ");";
+				+ "    nombreUsuario text NOT NULL,\n" + "    password text NOT NULL\n" + ");";
 
 		try (Statement stmt = conn.createStatement();) {
 			// create a new table
@@ -41,33 +41,33 @@ public class AdministradorBaseDatos {
 	}
 
 	/**
-	 * este metodo sirve para insertar administradores en la base de datos
+	 * con esto meto los administradores a la base de datos
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
+	 *            la conexion con la base de datos
 	 * @param DNI
-	 *            el dni del administrador
+	 *             dni del admin
 	 * @param sueldo
-	 *            el sueldo del administrador
-	 * @param horasDia
-	 *            las horas que trabaja el administrador
-	 * @param nombreUser
-	 *            el nombre del usuario del administrador
-	 * @param contraseña
-	 *            la contraseña del administrador
+	 *             sueldo del admin
+	 * @param horarioLaboral
+	 *             horas  trabaja el admin
+	 * @param nombreUsuario
+	 *             nombre  usuario del admin
+	 * @param password
+	 *             password del administrador
 	 * @throws SQLException
-	 *             si no se puede realizar salta la excepción sqlexception
+	 *             si no se  realiza salta la excepción 
 	 */
-	public static void insertAdministrador(Connection conn, String DNI, int sueldo, int horarioLaboral, String nombre,
-			String contraseña) throws SQLException {
-		String sql = "INSERT INTO administrador(DNI,sueldo,horarioLaboral,nombre,contraseña) VALUES(?,?,?,?,?)";
+	public static void insertAdministrador(Connection conn, String DNI, int sueldo, int horarioLaboral, String nombreUsuario,
+			String password) throws SQLException {
+		String sql = "INSERT INTO administrador(DNI,sueldo,horarioLaboral,nombreUsuario,password) VALUES(?,?,?,?,?)";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setString(1, DNI);
 			pstmt.setInt(2, sueldo);
 			pstmt.setInt(3, horarioLaboral);
-			pstmt.setString(4, nombre);
-			pstmt.setString(5, contraseña);
+			pstmt.setString(4, nombreUsuario);
+			pstmt.setString(5, password);
 
 			pstmt.execute();
 		} catch (SQLException e) {
@@ -76,30 +76,30 @@ public class AdministradorBaseDatos {
 	}
 
 	/**
-	 * Este metodo selecciona a los administradores que hay que la base de datos
+	 * con esto selecciono a los admin que estan en la bd
 	 * 
 	 * @param conn
-	 *            es la conexion de la base de datos
-	 * @return devuelve un array list de todos los administradores que hay
+	 *             conexion con la base de datos
+	 * @return devuelve un arrayList de los administradores  
 	 */
 	public static ArrayList<Administrador> selectAllAdministrador(Connection conn) {
-		String sql = "SELECT DNI,sueldo,horarioLaboral,nombre,contraseña FROM administrador";
-		ArrayList<Administrador> lista = new ArrayList<Administrador>();
+		String sql = "SELECT DNI,sueldo,horarioLaboral,nombreUsuario,password FROM administrador";
+		ArrayList<Administrador> list = new ArrayList<Administrador>();
 
 		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
 
 			while (rs.next()) {
 
 				Administrador seleccionado = new Administrador(rs.getString("DNI"), rs.getInt("sueldo"),
-						rs.getInt("horarioLaboral"), rs.getString("nombreUser"), rs.getString("contraseña"));
-				lista.add(seleccionado);
+						rs.getInt("horarioLaboral"), rs.getString("nombreUsuario"), rs.getString("password"));
+				list.add(seleccionado);
 
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 
-		return lista;
+		return list;
 	}
 
 }

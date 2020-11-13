@@ -77,52 +77,24 @@ public class CrearBaseDatos {
 
 			// insertar datos en la tabla administrador
 
-			ArrayList<String> administradores = new ArrayList<String>();
-			administradores.add("Admin 1");
+		
 			AdministradorBaseDatos.insertAdministrador(this.conn, "78936696Y", 1600, 4, "peter", "aaaa");
-
-			ArrayList<String> administradores1 = new ArrayList<String>();
-			administradores.add("Admin 2");
 			AdministradorBaseDatos.insertAdministrador(this.conn, "73039996F", 2400, 8, "anebo", "bbbb");
-
-			ArrayList<String> administradores2 = new ArrayList<String>();
-			administradores2.add("Admin 3");
 			AdministradorBaseDatos.insertAdministrador(this.conn, "74798774G", 1800, 6, "juancen", "cccc");
-
-			ArrayList<String> administradores3 = new ArrayList<String>();
-			administradores3.add("Admin 4");
 			AdministradorBaseDatos.insertAdministrador(this.conn, "76434000A", 2000, 7, "goros", "dddd");
-
-			ArrayList<String> administradores4 = new ArrayList<String>();
-			administradores4.add("Admin 5");
-			AdministradorBaseDatos.insertAdministrador(this.conn, "99995392G", 2500, 8, "anti", "eeee");
 
 			// insertar datos en la tabla comercial
 
 			ArrayList<String> clientes = new ArrayList<String>();
-			clientes.add("Elena");
 			ComercialBaseDatos.insertComercial(this.conn, "73054320U", 1800, 6, clientes);
-
-			ArrayList<String> clientes1 = new ArrayList<String>();
-			clientes1.add("Irene");
 			ComercialBaseDatos.insertComercial(this.conn, "73087690Y", 2000, 7, clientes);
-
-			ArrayList<String> clientes2 = new ArrayList<String>();
-			clientes2.add("Juan");
 			ComercialBaseDatos.insertComercial(this.conn, "73043212D", 2100, 8, clientes);
 
 			// insertar datos en la tabla tasador
 
-			ArrayList<String> tasadores = new ArrayList<String>();
-			tasadores.add("Maribel");
+
 			TasadorBaseDatos.insertTasador(this.conn, "74565421O", 3456, 5, 1);
-
-			ArrayList<String> tasadores1 = new ArrayList<String>();
-			tasadores.add("Francisco");
 			TasadorBaseDatos.insertTasador(this.conn, "88877765P", 1234, 6, 2);
-
-			ArrayList<String> tasadores2 = new ArrayList<String>();
-			tasadores2.add("Antuan");
 			TasadorBaseDatos.insertTasador(this.conn, "44321234U", 1233, 4, 3);
 
 			// insertar datos en la tabla factura
