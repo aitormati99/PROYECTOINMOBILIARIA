@@ -6,8 +6,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import logica.negocios.Administrador;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -18,8 +23,11 @@ public class BuscarAdmin extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * 
+	 * @param adminBD
+	 * @param menuAdministrador
 	 */
-	public BuscarAdmin() {
+	public BuscarAdmin(MenuAdministrador menuAdministrador, ArrayList<Administrador> adminBD) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 635, 471);

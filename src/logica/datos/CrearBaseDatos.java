@@ -77,7 +77,6 @@ public class CrearBaseDatos {
 
 			// insertar datos en la tabla administrador
 
-		
 			AdministradorBaseDatos.insertAdministrador(this.conn, "78936696Y", 1600, 4, "peter", "aaaa");
 			AdministradorBaseDatos.insertAdministrador(this.conn, "73039996F", 2400, 8, "anebo", "bbbb");
 			AdministradorBaseDatos.insertAdministrador(this.conn, "74798774G", 1800, 6, "juancen", "cccc");
@@ -91,7 +90,6 @@ public class CrearBaseDatos {
 			ComercialBaseDatos.insertComercial(this.conn, "73043212D", 2100, 8, clientes);
 
 			// insertar datos en la tabla tasador
-
 
 			TasadorBaseDatos.insertTasador(this.conn, "74565421O", 3456, 5, 1);
 			TasadorBaseDatos.insertTasador(this.conn, "88877765P", 1234, 6, 2);

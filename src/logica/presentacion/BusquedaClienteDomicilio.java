@@ -6,8 +6,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import logica.negocios.Cliente;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.ArrayList;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
@@ -20,8 +24,11 @@ public class BusquedaClienteDomicilio extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * 
+	 * @param clientesBD
+	 * @param menuAdministrador
 	 */
-	public BusquedaClienteDomicilio() {
+	public BusquedaClienteDomicilio(MenuAdministrador menuAdministrador, ArrayList<Cliente> clientesBD) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 654, 497);

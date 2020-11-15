@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Represents Proveedor
  * 
- * @author Alumno Aitor 
+ * @author Alumno Aitor
  * @version 1.0
  * @since 2020
  */

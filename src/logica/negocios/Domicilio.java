@@ -3,7 +3,7 @@ package logica.negocios;
 /**
  * Represents a Domicilio
  * 
- * @author Aitor 
+ * @author Aitor
  * @version 1.0
  * @since 2020
  */
@@ -17,7 +17,6 @@ public class Domicilio {
 	 * Represents Domicilio.
 	 */
 	public Domicilio() {
-		
 
 	}
 

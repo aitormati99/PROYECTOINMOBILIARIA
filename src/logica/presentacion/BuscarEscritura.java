@@ -19,8 +19,12 @@ public class BuscarEscritura extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * 
+	 * @param dni
+	 * @param codigo
+	 * @param menuAdministrador
 	 */
-	public BuscarEscritura() {
+	public BuscarEscritura(MenuAdministrador menuAdministrador, int codigo, String dni) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 679, 523);

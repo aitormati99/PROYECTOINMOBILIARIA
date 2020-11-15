@@ -2,15 +2,14 @@ package logica.negocios;
 
 import java.util.ArrayList;
 
-
 /**
  * Represents Tasador extends from Empleado
  * 
- * @author Aitor 
+ * @author Aitor
  * @version 1.0
  * @since 2020
  */
-public class Tasador extends Empleado{
+public class Tasador extends Empleado {
 
 	private int contadorFacturas;
 
@@ -57,7 +56,5 @@ public class Tasador extends Empleado{
 	public void setContadorFacturas(int contadorFacturas) {
 		this.contadorFacturas = contadorFacturas;
 	}
-
-	
 
 }

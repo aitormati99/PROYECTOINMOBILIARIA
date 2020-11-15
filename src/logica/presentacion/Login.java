@@ -100,8 +100,8 @@ public class Login extends JFrame {
 					boolean encontrado = comprobarAdministrador(usuario, password);
 					if (encontrado) {
 
-						MenuAdministrador menuAdmi = new MenuAdministrador(usuario, password, clientesBD, facturasBD, adminBD,
-								comercialesBD, tasadoresBD, papi);
+						MenuAdministrador menuAdmi = new MenuAdministrador(usuario, password, clientesBD, facturasBD,
+								adminBD, comercialesBD, tasadoresBD, papi);
 						menuAdmi.setVisible(true);
 						Login.this.dispose();
 					}

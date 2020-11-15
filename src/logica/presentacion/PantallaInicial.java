@@ -57,7 +57,9 @@ public class PantallaInicial extends JFrame {
 	}
 
 	/**
-	 * Se crea el jframe pantalla incial, con dos botones, administrador y cliente, si pulsa el boton de admin se le muestra la pantalla login y si pulsa el boton cliente se le muestra el menu cliente.
+	 * Se crea el jframe pantalla incial, con dos botones, administrador y
+	 * cliente, si pulsa el boton de admin se le muestra la pantalla login y si
+	 * pulsa el boton cliente se le muestra el menu cliente.
 	 */
 
 	public PantallaInicial() {
@@ -130,7 +132,6 @@ public class PantallaInicial extends JFrame {
 		});
 		btnSalir.setBounds(277, 408, 115, 29);
 		contentPane.add(btnSalir);
-
 
 	}
 }
