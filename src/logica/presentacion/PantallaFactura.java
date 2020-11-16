@@ -6,8 +6,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import logica.negocios.Cliente;
+import logica.negocios.Domicilio;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.ArrayList;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
@@ -22,8 +28,12 @@ public class PantallaFactura extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param clientesBD 
+	 * @param domicilios 
+	 * @param precioTot 
+	 * @param papi 
 	 */
-	public PantallaFactura() {
+	public PantallaFactura(PantallaInicial papi, int precioTot, ArrayList<Domicilio> domicilios, ArrayList<Cliente> clientesBD) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 527, 606);
