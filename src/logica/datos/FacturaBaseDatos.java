@@ -140,4 +140,27 @@ public class FacturaBaseDatos {
 		return list;
 	}
 
+	/**
+	 *  sirve para borrar facturas por su numero de factura
+	 * 
+	 * @param conn
+	 *            la conexion de la base de datos
+	 * @param numFac
+	 *            el numero de la factura que se quiere borrar
+	 */
+	public static void delete(Connection conn, int numFac) {
+		String sql = "DELETE FROM factura WHERE numFac = ?";
+
+		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+			// set the corresponding param
+			pstmt.setInt(1, numFac);
+
+			// execute the delete statement
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+}
 }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import logica.negocios.Administrador;
 
 /**
- * Es la clase donde estan los diferentes metodos que corresponden a la tabla de
+ * estan los diferentes metodos que corresponden a la tabla de
  * los administradores que estan en la base de datos
  * 
  * @author Aitor

@@ -72,8 +72,7 @@ public class CrearBaseDatos {
 
 			ArrayList<String> domicilios2 = new ArrayList<String>();
 			domicilios2.add("Villa3");
-			ClienteBaseDatos.insertCliente(this.conn, "Pedro", "Almodovar", "Martutene", "987065432", "76589743Q",
-					domicilios);
+			ClienteBaseDatos.insertCliente(this.conn, "Pedro", "Almodovar", "Martutene", "987065432", "76589743Q",domicilios);
 
 			// insertar datos en la tabla administrador
 
@@ -96,7 +95,6 @@ public class CrearBaseDatos {
 			TasadorBaseDatos.insertTasador(this.conn, "44321234U", 1233, 4, 3);
 
 			// insertar datos en la tabla factura
-			Domicilio casacomprada;
 			ArrayList<String> domicilios3 = new ArrayList<String>();
 			domicilios3.add("Villa4");
 			FacturaBaseDatos.insertFactura(this.conn, 1, "12-08-2009", 870.000, domicilios3);

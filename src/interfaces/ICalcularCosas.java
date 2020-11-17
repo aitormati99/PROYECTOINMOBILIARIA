@@ -11,15 +11,16 @@ import logica.negocios.Empleado;
  * @param <T>
  *            (genericos) tipo de dato que se la pasa
  */
-public interface ICalcularCosas <T extends Empleado> {
+public interface ICalcularCosas<T extends Empleado> {
 
 	/**
-	 * este metodo sirve para calcular el numero de comerciales y el coste
+	 * este metodo sirve para calcular el numero de comerciales
 	 * 
 	 * @param t
-	 *            array de diferentes tipos
-	 * @return array con los datos deseados
+	 *            es un array de distintos tipos
+	 * @return array con los datos que queremos
 	 */
 	public abstract ArrayList<Integer> calcular(ArrayList<T> t);
 
+	// falta por implementar lo hare mas adelante
 }
