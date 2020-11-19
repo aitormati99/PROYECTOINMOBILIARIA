@@ -154,7 +154,6 @@ public class Login extends JFrame {
 		boolean existencia = false;
 
 		for (Administrador a : adminBD) {
-
 			if (a.getUsuario().equals(usuario)) {
 				existencia = true;
 				break;

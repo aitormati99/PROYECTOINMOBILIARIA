@@ -103,9 +103,6 @@ public class CrearBaseDatos {
 			domicilios4.add("Villa5");
 			FacturaBaseDatos.insertFactura(this.conn, 2, "04-10-2020", 1.500000, domicilios4);
 
-			// Close connection
-			this.closeLink();
-
 		} catch (SQLException e) {
 
 			System.out.println("Process terminated with errors");

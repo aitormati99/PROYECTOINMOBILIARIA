@@ -89,14 +89,12 @@ public class AdministradorBaseDatos {
 		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
 
 			while (rs.next()) {
-
 				Administrador seleccionado = new Administrador(rs.getString("DNI"), rs.getInt("sueldo"),
 						rs.getInt("horarioLaboral"), rs.getString("nombreUsuario"), rs.getString("password"));
 				list.add(seleccionado);
-
 			}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage()+"- asjdfasdjfñkasdlfj");
 		}
 
 		return list;
