@@ -122,7 +122,7 @@ public class AdministradorBDTest {
 		ArrayList<Administrador> visto1 = logica.datos.AdministradorBaseDatos
 				.selectAllAdministrador(basedatos.getConn());
 
-		for (Administrador a : visto1) {
+		for (Administrador a : visto) {
 
 			if (a.getDni().equals("73036697N")) {
 
