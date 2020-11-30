@@ -61,4 +61,9 @@ public class BusquedaClienteDomicilio extends JFrame {
 		btnAtras.setBounds(366, 354, 115, 29);
 		contentPane.add(btnAtras);
 	}
+
+	public static ArrayList<Integer> mergeSort(ArrayList<Integer> input, ArrayList<String> domicilios) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

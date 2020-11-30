@@ -99,7 +99,7 @@ public class ComercialBaseDatos {
 	 * @return devuelve todos los comerciales de la bd
 	 */
 	public static ArrayList<Comercial> selectAllComercial(Connection conn) {
-		String sql = "SELECT DNI, sueldo, horarioLaboral,nombreClientes FROM comercial";
+		String sql = "SELECT DNI, sueldo, horarioLaboral, nombreClientes FROM comercial";
 		ArrayList<Comercial> list = new ArrayList<Comercial>();
 		ArrayList<String> listaClientes = new ArrayList<String>();
 
@@ -142,7 +142,7 @@ public class ComercialBaseDatos {
 	 */
 	public static void updateComercial(Connection conn, String DNI, int sueldo, int horarioLaboral,
 			ArrayList<String> clientes) {
-		String sql = "UPDATE comercial SET sueldo = ? , horarioLaboral = ? , clientes= ? WHERE DNI = ?";
+		String sql = "UPDATE comercial SET sueldo = ? , horarioLaboral = ? , nombreClientes = ? WHERE DNI = ?";
 		String nombreClientes = "";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
