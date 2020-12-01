@@ -1,6 +1,7 @@
 package junit;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
@@ -87,6 +88,11 @@ public class AdministradorBDTest {
 				assertEquals(a.getUsuario(), "olatzi10");
 				assertEquals(a.getContrasenya(), "alo");
 
+				assertNotEquals(a.getSueldo(), 2000);
+				assertNotEquals(a.getHorarioLaboral(), 4);
+				assertNotEquals(a.getUsuario(), "peter77");
+				assertNotEquals(a.getContrasenya(), "hey");
+
 			}
 		}
 
@@ -115,6 +121,10 @@ public class AdministradorBDTest {
 				assertEquals(a.getUsuario(), "olatzi10");
 				assertEquals(a.getContrasenya(), "alo");
 
+				assertNotEquals(a.getSueldo(), 2000);
+				assertNotEquals(a.getHorarioLaboral(), 4);
+				assertNotEquals(a.getUsuario(), "peter77");
+				assertNotEquals(a.getContrasenya(), "hey");
 			}
 		}
 
@@ -130,6 +140,11 @@ public class AdministradorBDTest {
 				assertEquals(a.getHorarioLaboral(), 7);
 				assertEquals(a.getUsuario(), "olatzi10");
 				assertEquals(a.getContrasenya(), "alo");
+
+				assertNotEquals(a.getSueldo(), 2000);
+				assertNotEquals(a.getHorarioLaboral(), 4);
+				assertNotEquals(a.getUsuario(), "peter77");
+				assertNotEquals(a.getContrasenya(), "hey");
 
 				assertNull(a.getUsuario());
 
