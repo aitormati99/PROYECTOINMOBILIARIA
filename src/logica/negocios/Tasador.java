@@ -2,6 +2,8 @@ package logica.negocios;
 
 import java.util.ArrayList;
 
+import utilidades.CalculatorGenerico;
+
 /**
  * Represents Tasador extends from Empleado
  * 
@@ -57,4 +59,11 @@ public class Tasador extends Empleado {
 		this.contadorFacturas = contadorFacturas;
 	}
 
+	public ArrayList<Integer> calcular(ArrayList<Tasador> leido) {
+		// TODO Auto-generated method stub
+
+		CalculatorGenerico solicitado = new CalculatorGenerico();
+		ArrayList<Integer> totalTasadores = solicitado.calcular(leido);
+		return totalTasadores;
+	}
 }

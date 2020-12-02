@@ -2,6 +2,8 @@ package logica.negocios;
 
 import java.util.ArrayList;
 
+import utilidades.CalculatorGenerico;
+
 /**
  * Represents a Comercial extends from Empleado.
  * 
@@ -57,4 +59,11 @@ public class Comercial extends Empleado {
 		this.clientes = clientes;
 	}
 
+	public ArrayList<Integer> calcular(ArrayList<Comercial> t) {
+		// TODO Auto-generated method stub
+
+		CalculatorGenerico solicitado = new CalculatorGenerico();
+		ArrayList<Integer> totalComerciales = solicitado.calcular(t);
+		return totalComerciales;
+	}
 }

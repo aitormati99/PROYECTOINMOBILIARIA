@@ -225,14 +225,7 @@ public class MenuAdministrador extends JFrame {
 					busqueda.setVisible(true);
 					MenuAdministrador.this.dispose();
 
-				} else if (ocasion.equals("Buscar escritura por codigo determinado")) {
-
-					int codigo = 0;
-					String dni = null;
-
-					BuscarEscritura busqueda = new BuscarEscritura(MenuAdministrador.this, codigo, dni);
-					busqueda.setVisible(true);
-					MenuAdministrador.this.dispose();
+				
 
 				} else if (ocasion.equals("Buscar nombre del administrador")) {
 
