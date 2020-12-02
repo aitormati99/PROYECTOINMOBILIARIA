@@ -2,6 +2,7 @@ package logica.presentacion;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.HashMap;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,6 +20,11 @@ public class VisualizaciondelCliente extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	public VisualizaciondelCliente(MenuAdministrador papi, int i, HashMap<String, String> datoAdministrador,
+			String dniMetido) {
+		// TODO Auto-generated constructor stub
+	}
 	public VisualizaciondelCliente() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,4 +53,6 @@ public class VisualizaciondelCliente extends JFrame {
 		lblDni.setBounds(349, 45, 69, 20);
 		contentPane.add(lblDni);
 	}
+
+	
 }
