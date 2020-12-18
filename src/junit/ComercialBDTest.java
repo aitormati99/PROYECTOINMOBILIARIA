@@ -17,7 +17,7 @@ import logica.datos.CrearBaseDatos;
 import logica.negocios.Comercial;
 
 /**
- * este es la clase donde se testea todo lo de la BD de comerciales
+ * se testea todo lo de la BD de comerciales
  * 
  * @author Aitor
  *
@@ -29,7 +29,7 @@ public class ComercialBDTest {
 
 	@Before
 	/**
-	 * este es el metodo donde se inicializan los valores
+	 * se inicializan los valores
 	 * 
 	 * @throws Exception
 	 */
@@ -41,7 +41,7 @@ public class ComercialBDTest {
 
 	@After
 	/**
-	 * este es el metodo donde se cierra la conexion despues de testear
+	 * se cierra la conexion despues de testear
 	 * 
 	 * @throws Exception
 	 */
@@ -52,7 +52,7 @@ public class ComercialBDTest {
 
 	@Test
 	/**
-	 * este es el metodo donde se testea si se a creado o no la tabla
+	 * se testea si se a creado o no la tabla
 	 * 
 	 * @throws SQLException
 	 */
@@ -66,7 +66,7 @@ public class ComercialBDTest {
 
 	@Test
 	/**
-	 * este es el metodo donde se testea el insert
+	 *  se testea el insert
 	 * 
 	 * @throws SQLException
 	 */
@@ -119,7 +119,7 @@ public class ComercialBDTest {
 
 	@Test
 	/**
-	 * este es el metodo donde se testea el select
+	 *  se testea el select
 	 * 
 	 * @throws SQLException
 	 */
@@ -175,7 +175,7 @@ public class ComercialBDTest {
 
 	@Test
 	/**
-	 * este es el metodo donde se testea el update
+	 *  se testea el update
 	 * 
 	 * @throws SQLException
 	 */
@@ -214,7 +214,7 @@ public class ComercialBDTest {
 
 	@Test
 	/**
-	 * este es el metodo donde se testea el delete
+	 *  se testea el delete
 	 * 
 	 * @throws SQLException
 	 */

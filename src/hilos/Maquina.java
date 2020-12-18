@@ -10,21 +10,21 @@ import logica.negocios.Inmobiliaria;
  *
  */
 
-public class MaquinaAutomatica extends Thread {
+public class Maquina extends Thread {
 
 	private String nombre;
 
 	/**
-	 * Este metodo sirve para obtener el nombre de la maquina automatica
+	 * Metodo que obtengo el nombre de la maqina
 	 * 
-	 * @return el nombre de la maquina automatica
+	 * @return  nombre de la maquina 
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 
 	/**
-	 * este metodo sirve para establecer el nombre de la maquina automatica
+	 *  metodo  para poner el nombre de la maquina 
 	 * 
 	 * @param nombre
 	 */
@@ -33,10 +33,10 @@ public class MaquinaAutomatica extends Thread {
 	}
 
 	/**
-	 * este metodo sirve para pausar la maquina automatica
+	 *  metodo que pausa la maquina 
 	 * 
 	 * @param tiempo
-	 *            es el tiempo que se quiere pausar
+	 *             tiempo que se quiere pausar
 	 */
 	private void pausar(long tiempo) {
 
@@ -48,7 +48,7 @@ public class MaquinaAutomatica extends Thread {
 	}
 
 	/**
-	 * este metodo sirve para indicar lo que hace la maquina cuando se ejecuta
+	 *   lo que hace la maquina cuando se ejecuta
 	 */
 	public void run() {
 

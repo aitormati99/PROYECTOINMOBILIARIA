@@ -17,7 +17,7 @@ import logica.datos.CrearBaseDatos;
 import logica.negocios.Administrador;
 
 /**
- * esta clase es para testear todo lo de la base de datos del administrador
+ * testear todo lo de la base de datos del administrador
  * 
  * @author Aitor
  */
@@ -28,7 +28,7 @@ public class AdministradorBDTest {
 
 	@Before
 	/**
-	 * este metodo lo hago para inicializar los valores
+	 *  inicializar los valores
 	 * 
 	 * @throws Exception
 	 */
@@ -42,7 +42,7 @@ public class AdministradorBDTest {
 
 	@After
 	/**
-	 * esto es para cerrar la conexion despues de testear
+	 *  cerrar la conexion despues de testear
 	 * 
 	 * @throws Exception
 	 */
@@ -53,7 +53,7 @@ public class AdministradorBDTest {
 
 	@Test
 	/**
-	 * este es el test en caso de que no se cree la tabla
+	 *  test en caso de que no se cree la tabla
 	 * 
 	 * @throws SQLException
 	 */
@@ -67,7 +67,7 @@ public class AdministradorBDTest {
 
 	@Test
 	/**
-	 * este es el test de insertar los administradores
+	 * test de insertar los administradores
 	 * 
 	 * @throws SQLException
 	 */
@@ -100,7 +100,7 @@ public class AdministradorBDTest {
 
 	@Test
 	/**
-	 * este es el test de seleccionar los administradores
+	 * test de seleccionar los administradores
 	 * 
 	 * @throws SQLException
 	 */

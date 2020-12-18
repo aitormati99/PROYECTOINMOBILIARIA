@@ -17,9 +17,9 @@ import logica.datos.CrearBaseDatos;
 import logica.negocios.Cliente;
 
 /**
- * esta es la clase para testear todo lo de la BD de los clientes
+ *  testear todo lo de la BD de los clientes
  * 
- * @author Alumno
+ * @author Aitor
  *
  */
 
@@ -29,7 +29,7 @@ public class ClientesBDTest {
 
 	@Before
 	/**
-	 * este es el metodo para inicializar los valores
+	 *  para inicializar los valores
 	 * 
 	 * @throws Exception
 	 */
@@ -41,7 +41,7 @@ public class ClientesBDTest {
 
 	@After
 	/**
-	 * este es el metodo para cerrar la conexion al finalziar de testear
+	 *  cerrar la conexion al finalizar de testear
 	 * 
 	 * @throws Exception
 	 */
@@ -52,7 +52,7 @@ public class ClientesBDTest {
 
 	@Test
 	/**
-	 * este es el metodo para ver si al tabla no se crea
+	 * para ver si al tabla no se crea
 	 * 
 	 * @throws SQLException
 	 */
@@ -64,7 +64,7 @@ public class ClientesBDTest {
 
 	@Test
 	/**
-	 * este es el metodo para testear el insert de clientes
+	 * testear el insert de clientes
 	 */
 	public void testInsert() {
 
@@ -118,7 +118,7 @@ public class ClientesBDTest {
 
 	@Test
 	/**
-	 * este es el metodo para seleccionar el select de los clientes
+	 *  seleccionar el select de los clientes
 	 */
 	public void select() {
 
@@ -171,7 +171,7 @@ public class ClientesBDTest {
 
 	@Test
 	/**
-	 * este es el metodo para testear el delete de los clientes
+	 * testear el delete de los clientes
 	 */
 	public void delete() {
 

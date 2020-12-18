@@ -96,10 +96,7 @@ public class infoTasadores extends JFrame {
 			btnSalir.setBounds(27, 284, 115, 29);
 			contentPane.add(btnSalir);
 
-			JLabel lblNewLabel = new JLabel("New label");
-			lblNewLabel.setIcon(new ImageIcon("imagenes/infoRepartidor.jpg"));
-			lblNewLabel.setBounds(0, -52, 676, 591);
-			contentPane.add(lblNewLabel);
+			
 
 		}
 	}

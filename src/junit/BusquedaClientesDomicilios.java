@@ -18,7 +18,7 @@ public class BusquedaClientesDomicilios {
 
 		@Before
 		/**
-		 * este es el metodo para inicializar los valores
+		 * para inicializar los valores
 		 * 
 		 * @throws Exception
 		 */
@@ -41,7 +41,7 @@ public class BusquedaClientesDomicilios {
 
 		@Test
 		/**
-		 * este es el metodo para testear el merge
+		 *  para testear el merge
 	 */
 		public void testMerge() {
 			ArrayList<Integer> num = logica.presentacion.BusquedaClienteDomicilio.mergeSort(Input, domicilios);

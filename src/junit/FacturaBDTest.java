@@ -16,7 +16,7 @@
 
 
 /**
- * esta es la clase donde se teste todo lo de la BD de las facturas
+ *  se teste todo lo de la BD de las facturas
  * 
  * @author Aitor
  *
@@ -28,7 +28,7 @@ public class FacturaBDTest {
 
 		@Before
 		/**
-		 * este es el metodo donde se inicializan los valores
+		 * donde se inicializan los valores
 		 * 
 		 * @throws Exception
 		 */
@@ -40,7 +40,7 @@ public class FacturaBDTest {
 
 		@After
 		/**
-		 * este es el metodo donde se cierra al conexion despues de testear
+		 * se cierra al conexion despues de testear
 		 * 
 		 * @throws Exception
 		 */
@@ -51,7 +51,7 @@ public class FacturaBDTest {
 
 		@Test
 		/**
-		 * este es el metodo donde se testea si se ha creado o no la tabla
+		 *  donde se testea si se ha creado o no la tabla
 		 * 
 		 * @throws SQLException
 		 */
@@ -64,7 +64,7 @@ public class FacturaBDTest {
 
 		@Test
 		/**
-		 * este es el metodo donde se testea el insert de facturas
+		 * donde se testea el insert de facturas
 		 */
 		public void testInsert() {
 
@@ -109,7 +109,7 @@ public class FacturaBDTest {
 
 		@Test
 		/**
-		 * este es el metodo donde se testea el select de facturas
+		 * se testea el select de facturas
 		 */
 		public void select() {
 
