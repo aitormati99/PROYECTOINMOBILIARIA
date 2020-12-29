@@ -6,10 +6,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import logica.negocios.Factura;
+
 import javax.swing.JScrollPane;
 import java.awt.Component;
 import javax.swing.JTextPane;
 import java.awt.Font;
+import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.JButton;
@@ -20,8 +25,11 @@ public class VisualizacionFactura extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param seleccion 
+	 * @param fecha 
+	 * @param buscarFactura 
 	 */
-	public VisualizacionFactura() {
+	public VisualizacionFactura(BuscarFactura buscarFactura, String fecha, ArrayList<Factura> seleccion) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 598, 469);
