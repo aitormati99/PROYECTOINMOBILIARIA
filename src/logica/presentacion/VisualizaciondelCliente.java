@@ -21,8 +21,8 @@ public class VisualizaciondelCliente extends JFrame {
 	 * Create the frame.
 	 */
 	
-	public VisualizaciondelCliente(MenuAdministrador papi, int i, HashMap<String, String> datoAdministrador,
-			String dniMetido) {
+	public VisualizaciondelCliente(String dni, String contenido, MenuAdministrador papi,
+			int i) {
 		// TODO Auto-generated constructor stub
 	}
 	public VisualizaciondelCliente() {
@@ -52,6 +52,10 @@ public class VisualizaciondelCliente extends JFrame {
 		JLabel lblDni = new JLabel("DNI");
 		lblDni.setBounds(349, 45, 69, 20);
 		contentPane.add(lblDni);
+	}
+	public VisualizaciondelCliente(MenuAdministrador papi, int i, HashMap<String, String> datoAdministrador,
+			String dniMetido) {
+		// TODO Auto-generated constructor stub
 	}
 
 	

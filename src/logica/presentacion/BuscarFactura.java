@@ -65,13 +65,12 @@ public class BuscarFactura extends JFrame {
 	/**
 	 * @wbp.parser.constructor
 	 */
-	public BuscarFactura(ArrayList <Comercial> comercialesBD,ArrayList <Tasador> tasadoresBD, ArrayList<Factura> facturasBD, String dato,MenuAdministrador menuAdministrador, Date fecha, int coste,
+	public BuscarFactura(ArrayList<Factura> facturasBD, MenuAdministrador menuAdministrador, Date fecha, int coste,
 			int numFac, ArrayList<String> nombreDomicilios) {
 		setResizable(false);
-		this.listaComerciales = comercialesBD;
-		this.listaTasadores=tasadoresBD;
+		this.listaComerciales = listaComerciales;
+		this.listaTasadores=listaTasadores;
 		this.padre = padre;
-		lblBusquedaFactura = new JLabel(dato);
 		ocasion = ocasion;
 		cargarVentana();
 		
