@@ -14,10 +14,7 @@ public class ConfirmacionCompra extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Create the frame.
-	 * @param precioTot 
-	 */
+	
 	public ConfirmacionCompra(int precioTot) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -2,6 +2,8 @@ package logica.presentacion;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 import javax.swing.JFrame;
@@ -16,16 +18,38 @@ import javax.swing.JLabel;
 public class VisualizaciondelCliente extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Create the frame.
-	 */
+	private JTextPane textPane;
+	private MenuAdministrador padre;
+	private String contenidoCliente;
+	private String dniCliente;
+	private int i;
+	private String dniAdmin;
+	private HashMap<String, String> adminInformacion;
+	
 	
 	public VisualizaciondelCliente(String dni, String contenido, MenuAdministrador papi,
 			int i) {
 		// TODO Auto-generated constructor stub
+		
+		this.padre = papi;
+		this.contenidoCliente = contenido;
+		this.dniCliente = dni;
+		this.i = i;
+		
+		cargarVentana();
+
 	}
-	public VisualizaciondelCliente() {
+	public VisualizaciondelCliente(MenuAdministrador papi, int i, HashMap<String, String> datoAdministrador,
+			String dniMetido) {
+		// TODO Auto-generated constructor stub
+		
+		this.padre = papi;
+		this.i = i;
+		datoAdministrador= datoAdministrador;
+
+		cargarVentana();
+	}
+	public void cargarVentana() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 618, 414);
@@ -53,10 +77,16 @@ public class VisualizaciondelCliente extends JFrame {
 		lblDni.setBounds(349, 45, 69, 20);
 		contentPane.add(lblDni);
 	}
-	public VisualizaciondelCliente(MenuAdministrador papi, int i, HashMap<String, String> datoAdministrador,
-			String dniMetido) {
-		// TODO Auto-generated constructor stub
-	}
+	
 
+	private class ClickListener implements ActionListener {
+
+		public void actionPerformed(ActionEvent e) {
+
+			VisualizaciondelCliente.this.dispose();
+			padre.setVisible(true);
+		}
+
+	}
 	
 }
