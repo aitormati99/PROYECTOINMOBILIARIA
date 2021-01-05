@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import utilidades.CalculatorGenerico;
+import utilidades.Calcular;
 
 import javax.swing.JLabel;
 import javax.swing.JList;

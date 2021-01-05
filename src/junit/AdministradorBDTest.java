@@ -28,7 +28,7 @@ public class AdministradorBDTest {
 
 	@Before
 	/**
-	 *  inicializar los valores
+	 * inicializar los valores
 	 * 
 	 * @throws Exception
 	 */
@@ -42,7 +42,7 @@ public class AdministradorBDTest {
 
 	@After
 	/**
-	 *  cerrar la conexion despues de testear
+	 * cerrar la conexion despues de testear
 	 * 
 	 * @throws Exception
 	 */
@@ -53,7 +53,7 @@ public class AdministradorBDTest {
 
 	@Test
 	/**
-	 *  test en caso de que no se cree la tabla
+	 * test en caso de que no se cree la tabla
 	 * 
 	 * @throws SQLException
 	 */

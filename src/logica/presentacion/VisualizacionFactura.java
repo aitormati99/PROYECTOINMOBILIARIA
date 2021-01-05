@@ -22,7 +22,7 @@ import javax.swing.JButton;
 public class VisualizacionFactura extends JFrame {
 
 	private JPanel contentPane;
-
+ 
 	/**
 	 * Create the frame.
 	 * @param seleccion 

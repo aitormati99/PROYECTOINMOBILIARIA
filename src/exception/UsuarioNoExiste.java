@@ -3,7 +3,8 @@ package exception;
 import java.awt.List;
 
 /**
- * @author Aitor Creo este paquete para poder guardar las excepciones que me
+ * @author Aitor 
+ * Creo este paquete para poder guardar las excepciones que me
  *         surjan, en este caso la excepcion de UsuarioNoExisteEste.
  *
  */

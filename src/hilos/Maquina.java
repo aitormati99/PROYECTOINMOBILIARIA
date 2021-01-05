@@ -6,8 +6,8 @@ import logica.negocios.Inmobiliaria;
 
 /**
  * 
- * @author Aitor
- *
+ * @author Aitor A
+ * Aqui hago uso de los hilos aprendidos en clase
  */
 
 public class Maquina extends Thread {
@@ -15,16 +15,16 @@ public class Maquina extends Thread {
 	private String nombre;
 
 	/**
-	 * Metodo que obtengo el nombre de la maqina
+	 * Metodo que obtiene el nombre de la maqina
 	 * 
-	 * @return  nombre de la maquina 
+	 * @return nombre de la maquina
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 
 	/**
-	 *  metodo  para poner el nombre de la maquina 
+	 * metodo para poner el nombre de la maquina
 	 * 
 	 * @param nombre
 	 */
@@ -33,37 +33,37 @@ public class Maquina extends Thread {
 	}
 
 	/**
-	 *  metodo que pausa la maquina 
+	 * metodo que pausa la maquina
 	 * 
 	 * @param tiempo
-	 *             tiempo que se quiere pausar
+	 *            tiempo que se quiere pausar
 	 */
 	private void pausar(long tiempo) {
 
 		try {
 			Thread.sleep(tiempo);
 		} catch (InterruptedException ex) {
-			System.out.println("Error al pausar el hilo");
+			System.out.println("Fallo al parar el hilo");
 		}
 	}
 
 	/**
-	 *   lo que hace la maquina cuando se ejecuta
+	 * lo que hace la maquina cuando se ejecuta
 	 */
 	public void run() {
 
 		while (Inmobiliaria.getInstancia().isEnServicio()) {
 
-			Cliente clienteAtender = Inmobiliaria.getInstancia().pasarClienteAlCajero();
+			Cliente atendiendo = Inmobiliaria.getInstancia().pasarClienteAlCajero();
 
-			if (clienteAtender == null) {
+			if (atendiendo == null) {
 
-				System.out.println(this + " MAQUINA " + nombre + ": esperando usuarios");
+				System.out.println(this + " MAQUINA " + nombre + ": esperando compradores");
 				pausar(1000);
 				continue;
 			}
 
-			System.out.println("MAQUINA " + nombre + ": atendiendo al usuario con" + "DNI " + clienteAtender.getDni());
+			System.out.println("MAQUINA " + nombre + ": atendiendo al comprador con" + "DNI " + atendiendo.getDni());
 			pausar(5000);
 		}
 	}

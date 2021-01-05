@@ -5,15 +5,14 @@ import logica.negocios.Inmobiliaria;
 
 /**
  * 
- * @author  Aitor
+ * @author Aitor
  *
  */
 public class Proveedor extends Thread {
 
 	@Override
 	/**
-	 *  lo que hace el proveedor  cuando
-	 * se ejecute
+	 * lo que hace el proveedor cuando se ejecute
 	 */
 	public void run() {
 
@@ -22,22 +21,22 @@ public class Proveedor extends Thread {
 			try {
 				Thread.sleep(2000);
 			} catch (InterruptedException ex) {
-				System.out.println("Error al pausar el hilo");
+				System.out.println("Fallo al parar el hilo");
 			}
 
-			Cliente usuarioParaEntrarInmobiliaria = new Cliente();
-			usuarioParaEntrarInmobiliaria.setDni(crearDni());
+			Cliente compradorentrandoInmo = new Cliente();
+			compradorentrandoInmo.setDni(crearDni());
 
 			System.out.println(
-					"El cliente con DNI: " + usuarioParaEntrarInmobiliaria.getDni() + " esta entrando a la inmobiliaria");
+					"El comprador con DNI: " + compradorentrandoInmo.getDni() + " esta entrando a la inmobiliaria");
 
-			Inmobiliaria.getInstancia().agregarClienteFila(usuarioParaEntrarInmobiliaria);
+			Inmobiliaria.getInstancia().agregarClienteFila(compradorentrandoInmo);
 
 		}
 	}
 
 	/**
-	 *  crear dnis aleatoriamente
+	 * crear dnis aleatoriamente
 	 * 
 	 * @return dni
 	 */
@@ -50,12 +49,12 @@ public class Proveedor extends Thread {
 		for (int i = 0; i < 8; i++) {
 
 			if (i < 7) {
-				int e1 = (int) (Math.random() * 10);
-				agrupacion[i] = (char) num[e1];
+				int a1 = (int) (Math.random() * 10);
+				agrupacion[i] = (char) num[a1];
 
 			} else {
-				int e2 = (int) (Math.random() * 27);
-				agrupacion[i] = (char) caracteres[e2];
+				int a2 = (int) (Math.random() * 27);
+				agrupacion[i] = (char) caracteres[a2];
 			}
 
 		}
