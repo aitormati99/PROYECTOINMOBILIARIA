@@ -14,8 +14,8 @@ public class Inmobiliaria {
 	private static Inmobiliaria instancia;
 	private ConcurrentLinkedQueue<Cliente> clientes;
 
-	// Indica si la maquina esta ocupada o no
-	private boolean enServicio;
+	// si la maquina esta ocupada o no
+	private boolean On;
 
 	private Inmobiliaria() {
 
@@ -23,9 +23,9 @@ public class Inmobiliaria {
 	}
 
 	/**
-	 * este metodo sirve para obtener la instancia de la inmobiliaria
+	 * obtener la instancia de la inmobiliaria
 	 * 
-	 * @return
+	 * @return instancia
 	 */
 	public static Inmobiliaria getInstancia() {
 
@@ -37,22 +37,22 @@ public class Inmobiliaria {
 	}
 
 	/**
-	 * este metodo sirve para obtener si esta en servicio o no
+	 * si esta en servicio o no
 	 * 
-	 * @return en caso de que este en servicio enviara un true y sino un false
+	 * @return si esta en servicio envia true y sino un false
 	 */
-	public boolean isEnServicio() {
-		return enServicio;
+	public boolean isOn() {
+		return On;
 	}
 
 	/**
-	 * este metodo sirve para establecer el servicio
+	 * dar el servicio
 	 * 
 	 * @param enServicio
 	 *            un true si esta en servicio y false si no
 	 */
 	public void setEnServicio(boolean enServicio) {
-		this.enServicio = enServicio;
+		this.On = On;
 	}
 
 	/**
@@ -60,15 +60,15 @@ public class Inmobiliaria {
 	 * 
 	 * @return devuelve un cliente
 	 */
-	public Cliente pasarClienteAlCajero() {
+	public Cliente atenderCliente() {
 
 		Cliente usuario = null;
 
 		try {
-			System.out.println("La longitud de la fila es de: " + clientes.size() + " clientes");
+			System.out.println("El tamaño de la fila es de: " + clientes.size() + " clientes");
 			usuario = clientes.remove();
 		} catch (NoSuchElementException e) {
-			System.out.println("La fila se encuentra vacia");
+			System.out.println("La fila está vacia");
 		}
 
 		return usuario;
@@ -76,14 +76,14 @@ public class Inmobiliaria {
 	}
 
 	/**
-	 * este metodod sirve para agregar clientes a la fila
+	 * añadir clientes a la fila
 	 * 
 	 * @param cliente
-	 *            cliente que llega a la fila
+	 *            nuevo cliente que llega a la fila
 	 */
 	public void agregarClienteFila(Cliente cliente) {
 
-		System.out.println("Ha llegado un cliente a la pizzeria");
+		System.out.println("Ha llegado un cliente a la inmobiliaria");
 		clientes.add(cliente);
 	}
 

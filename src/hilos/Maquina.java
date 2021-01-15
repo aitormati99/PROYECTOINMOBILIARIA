@@ -6,8 +6,8 @@ import logica.negocios.Inmobiliaria;
 
 /**
  * 
- * @author Aitor A
- * Aqui hago uso de los hilos aprendidos en clase
+ * @author Aitor Aqui hago uso de los hilos aprendidos en clase de la manera que
+ *         extiendo del thread
  */
 
 public class Maquina extends Thread {
@@ -24,7 +24,7 @@ public class Maquina extends Thread {
 	}
 
 	/**
-	 * metodo para poner el nombre de la maquina
+	 * Metodo para poner el nombre de la maquina
 	 * 
 	 * @param nombre
 	 */
@@ -36,7 +36,7 @@ public class Maquina extends Thread {
 	 * metodo que pausa la maquina
 	 * 
 	 * @param tiempo
-	 *            tiempo que se quiere pausar
+	 *            tiempo que quiero pausar
 	 */
 	private void pausar(long tiempo) {
 
@@ -52,9 +52,9 @@ public class Maquina extends Thread {
 	 */
 	public void run() {
 
-		while (Inmobiliaria.getInstancia().isEnServicio()) {
+		while (Inmobiliaria.getInstancia().isOn()) {
 
-			Cliente atendiendo = Inmobiliaria.getInstancia().pasarClienteAlCajero();
+			Cliente atendiendo = Inmobiliaria.getInstancia().atenderCliente();
 
 			if (atendiendo == null) {
 

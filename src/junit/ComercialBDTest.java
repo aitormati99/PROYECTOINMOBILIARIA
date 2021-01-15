@@ -66,7 +66,7 @@ public class ComercialBDTest {
 
 	@Test
 	/**
-	 *  se testea el insert
+	 * se testea el insert
 	 * 
 	 * @throws SQLException
 	 */
@@ -119,7 +119,7 @@ public class ComercialBDTest {
 
 	@Test
 	/**
-	 *  se testea el select
+	 * se testea el select
 	 * 
 	 * @throws SQLException
 	 */
@@ -175,7 +175,7 @@ public class ComercialBDTest {
 
 	@Test
 	/**
-	 *  se testea el update
+	 * se testea el update
 	 * 
 	 * @throws SQLException
 	 */
@@ -214,7 +214,7 @@ public class ComercialBDTest {
 
 	@Test
 	/**
-	 *  se testea el delete
+	 * se testea el delete
 	 * 
 	 * @throws SQLException
 	 */

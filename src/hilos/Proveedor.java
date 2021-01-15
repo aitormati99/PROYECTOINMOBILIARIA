@@ -16,7 +16,7 @@ public class Proveedor extends Thread {
 	 */
 	public void run() {
 
-		while (Inmobiliaria.getInstancia().isEnServicio()) {
+		while (Inmobiliaria.getInstancia().isOn()) {
 
 			try {
 				Thread.sleep(2000);
@@ -24,19 +24,19 @@ public class Proveedor extends Thread {
 				System.out.println("Fallo al parar el hilo");
 			}
 
-			Cliente compradorentrandoInmo = new Cliente();
-			compradorentrandoInmo.setDni(crearDni());
+			Cliente compradorEntrandoInmo = new Cliente();
+			compradorEntrandoInmo.setDni(crearDni());
 
 			System.out.println(
-					"El comprador con DNI: " + compradorentrandoInmo.getDni() + " esta entrando a la inmobiliaria");
+					"El comprador con DNI: " + compradorEntrandoInmo.getDni() + " esta entrando a la inmobiliaria");
 
-			Inmobiliaria.getInstancia().agregarClienteFila(compradorentrandoInmo);
+			Inmobiliaria.getInstancia().agregarClienteFila(compradorEntrandoInmo);
 
 		}
 	}
 
 	/**
-	 * crear dnis aleatoriamente
+	 * creo dnis aleatoriamente
 	 * 
 	 * @return dni
 	 */

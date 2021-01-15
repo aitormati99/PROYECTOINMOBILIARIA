@@ -17,7 +17,7 @@ import logica.datos.CrearBaseDatos;
 import logica.negocios.Tasador;
 
 /**
- *  se testea todo lo de la BD de tasadores
+ * se testea todo lo de la BD de tasadores
  * 
  * @author Aitor
  *
@@ -28,7 +28,7 @@ public class TasadorBDTest {
 
 	@Before
 	/**
-	 *  donde se inicializan los valores
+	 * donde se inicializan los valores
 	 * 
 	 * @throws Exception
 	 */
@@ -40,7 +40,7 @@ public class TasadorBDTest {
 
 	@After
 	/**
-	 *  se cierra la conexion despues de testear
+	 * se cierra la conexion despues de testear
 	 * 
 	 * @throws Exception
 	 */
@@ -71,7 +71,6 @@ public class TasadorBDTest {
 	 */
 	public void testInsert() throws SQLException {
 
-		
 		logica.datos.TasadorBaseDatos.createTasadorTable(basedatos.getConn());
 		logica.datos.TasadorBaseDatos.insertTasador(basedatos.getConn(), "84864532Ñ", 2500, 8, 1);
 		ArrayList<Tasador> visto = logica.datos.TasadorBaseDatos.selectAllTasador(basedatos.getConn());
@@ -84,34 +83,31 @@ public class TasadorBDTest {
 				assertEquals(t.getHorarioLaboral(), 8);
 				assertEquals(t.getContadorFacturas(), 1);
 
-				}
-			}
-
-			logica.datos.TasadorBaseDatos.insertTasador(basedatos.getConn(), "12345633P", 2500, 8, 1);
-			ArrayList<Tasador> visto1 = logica.datos.TasadorBaseDatos.selectAllTasador(basedatos.getConn());
-
-			for (Tasador t : visto1) {
-
-				if (t.getDni().equals("12345633P")) {
-
-					assertNotEquals(t.getSueldo(), 300);
-					assertNotEquals(t.getHorarioLaboral(), 7);
-					assertNotEquals(t.getContadorFacturas(), 3);
-					
-				}
 			}
 		}
 
-	
+		logica.datos.TasadorBaseDatos.insertTasador(basedatos.getConn(), "12345633P", 2500, 8, 1);
+		ArrayList<Tasador> visto1 = logica.datos.TasadorBaseDatos.selectAllTasador(basedatos.getConn());
+
+		for (Tasador t : visto1) {
+
+			if (t.getDni().equals("12345633P")) {
+
+				assertNotEquals(t.getSueldo(), 300);
+				assertNotEquals(t.getHorarioLaboral(), 7);
+				assertNotEquals(t.getContadorFacturas(), 3);
+
+			}
+		}
+	}
 
 	@Test
 	/**
-	 *  se testea el select
+	 * se testea el select
 	 * 
 	 * @throws SQLException
 	 */
 	public void testSelect() throws SQLException {
-
 
 		logica.datos.TasadorBaseDatos.createTasadorTable(basedatos.getConn());
 		logica.datos.TasadorBaseDatos.insertTasador(basedatos.getConn(), "11111111A", 2500, 8, 3);
@@ -125,7 +121,6 @@ public class TasadorBDTest {
 				assertEquals(t.getHorarioLaboral(), 8);
 				assertEquals(t.getContadorFacturas(), 3);
 
-				
 			}
 
 			logica.datos.TasadorBaseDatos.insertTasador(basedatos.getConn(), "12345699A", 3450, 10, 2);
@@ -146,12 +141,11 @@ public class TasadorBDTest {
 
 	@Test
 	/**
-	 *  se testea el update
+	 * se testea el update
 	 * 
 	 * @throws SQLException
 	 */
 	public void testUpdate() throws SQLException {
-
 
 		logica.datos.TasadorBaseDatos.createTasadorTable(basedatos.getConn());
 		logica.datos.TasadorBaseDatos.insertTasador(basedatos.getConn(), "12345699A", 3450, 10, 2);
@@ -164,25 +158,21 @@ public class TasadorBDTest {
 
 				assertEquals(c.getSueldo(), 3000);
 				assertEquals(c.getHorarioLaboral(), 9);
-			
 
 				assertNotEquals(c.getSueldo(), 3450);
 				assertNotEquals(c.getHorarioLaboral(), 10);
-				}
 			}
+		}
 
 	}
 
-
 	@Test
 	/**
-	 *  se testea el delete
+	 * se testea el delete
 	 * 
 	 * @throws SQLException
 	 */
 	public void testDelete() throws SQLException {
-
-	
 
 		logica.datos.TasadorBaseDatos.createTasadorTable(basedatos.getConn());
 		logica.datos.TasadorBaseDatos.insertTasador(basedatos.getConn(), "12345699A", 3450, 10, 5);

@@ -17,7 +17,7 @@ import logica.datos.CrearBaseDatos;
 import logica.negocios.Cliente;
 
 /**
- *  testear todo lo de la BD de los clientes
+ * testear todo lo de la BD de los clientes
  * 
  * @author Aitor
  *
@@ -29,7 +29,7 @@ public class ClientesBDTest {
 
 	@Before
 	/**
-	 *  para inicializar los valores
+	 * para inicializar los valores
 	 * 
 	 * @throws Exception
 	 */
@@ -41,7 +41,7 @@ public class ClientesBDTest {
 
 	@After
 	/**
-	 *  cerrar la conexion al finalizar de testear
+	 * cerrar la conexion al finalizar de testear
 	 * 
 	 * @throws Exception
 	 */
@@ -118,7 +118,7 @@ public class ClientesBDTest {
 
 	@Test
 	/**
-	 *  seleccionar el select de los clientes
+	 * seleccionar el select de los clientes
 	 */
 	public void select() {
 

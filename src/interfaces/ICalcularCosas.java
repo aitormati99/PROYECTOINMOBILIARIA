@@ -22,4 +22,5 @@ public interface ICalcularCosas<T extends Empleado> {
 	 */
 	public abstract ArrayList<Integer> calcular(ArrayList<T> t);
 
+	
 }
