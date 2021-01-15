@@ -17,7 +17,6 @@ import java.awt.Font;
 import java.util.ArrayList;
 import java.awt.Color;
 import javax.swing.JTextField;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -47,10 +46,10 @@ public class BusquedaClienteDomicilio extends JFrame {
 	 * @param menuAdministrador
 	 */
 	public BusquedaClienteDomicilio(MenuAdministrador padre, ArrayList<Cliente> clientes) {
-	
+
 		this.clientes = clientes;
 		this.papi = padre;
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 654, 497);
 		contentPane = new JPanel();
@@ -77,21 +76,18 @@ public class BusquedaClienteDomicilio extends JFrame {
 		JButton btnOk = new JButton("OK");
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
-			
+
 				String dni = textField.getText();
 				ArrayList<String> domicilios = new ArrayList<String>();
 				try {
 					boolean encontrado = comprobarCliente(dni);
 					domicilios = elegido.getNombreDomicilios();
 
-					
-
 					// abrir otra ventana mostrando la info
 					String contenido = "";
 					for (int i = 0; i < domicilios.size(); i++) {
 
-						contenido += "- " + domicilios.get(i) + " " ;
+						contenido += "- " + domicilios.get(i) + " ";
 
 					}
 					BusquedaClienteDomicilio.this.dispose();
@@ -103,11 +99,6 @@ public class BusquedaClienteDomicilio extends JFrame {
 					JOptionPane.showMessageDialog(BusquedaClienteDomicilio.this, z.getMessage());
 				}
 
-			
-			
-			
-			
-			
 			}
 		});
 		btnOk.setBounds(163, 354, 115, 29);
@@ -116,30 +107,35 @@ public class BusquedaClienteDomicilio extends JFrame {
 		JButton btnAtras = new JButton("ATRAS");
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+
 				papi.setVisible(true);
 				BusquedaClienteDomicilio.this.dispose();
-			
-			
+
 			}
 		});
 		btnAtras.setBounds(366, 354, 115, 29);
 		contentPane.add(btnAtras);
 	}
 
-	public static ArrayList<Integer> mergeSort(ArrayList<Integer> input, ArrayList<String> domicilios) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
+
+	/**
+	 * compruebo si existe o no el dni que ha introducido para hacer la busqueda
+	 * 
+	 * @param dni
+	 *            dni del ciente
+	 * @return false si no existe, true si existe
+	 * @throws UsuarioNoExiste
+	 *             clase que se implementa la excepcion del usuario no existente
+	 */
 	public boolean comprobarCliente(String dni) throws UsuarioNoExiste {
 
-		boolean existencia = false;
+		boolean existe = false;
 
 		for (Cliente a : clientes) {
 
 			if (a.getDni().equals(dni)) {
-				existencia = true;
+				existe = true;
 				elegido = a;
 				break;
 
@@ -147,38 +143,94 @@ public class BusquedaClienteDomicilio extends JFrame {
 
 		}
 
-		if (existencia == true) {
+		if (existe == true) {
 
 			return true;
 
 		} else {
 
-			throw new UsuarioNoExiste("DNI no Existente");
+			throw new UsuarioNoExiste("DNI no existe");
+
+		}
+
+	}
+
+	/**
+	 * Este metodo sirve para ordenar de menor a mayor el arraylist de los
+	 * domicilios de los clientes
+	 * 
+	 * 
+	 * @param input
+	 *            un arraylist del numero de veces que las compra
+	 * @param domicilios
+	 *            un arraylist de los domicilios de los clientes
+	 * @return devuelve el arraylist del numero de veces ordenado
+	 */
+
+	public static ArrayList<Integer> mergeSort(ArrayList<Integer> input, ArrayList<String> domicilios) {
+		// TODO Auto-generated method stub
+		
+		if (input.size() == 1) {
+			return input;
+		} else {
+			int a = input.size() / 2;
+			ArrayList<Integer> left = new ArrayList<Integer>(a);
+			ArrayList<Integer> right = new ArrayList<Integer>(input.size() - a);
+			ArrayList<String> leftP = new ArrayList<String>(a);
+			ArrayList<String> rightP = new ArrayList<String>(input.size() - a);
+
+			for (int i = 0; i < a; i++) {
+				left.add(input.get(i));
+				leftP.add(domicilios.get(i));
+			}
+
+			for (int i = a; i < input.size(); i++) {
+				right.add(input.get(i));
+				rightP.add(domicilios.get(i));
+			}
+
+			left = mergeSort(left, leftP);
+			right = mergeSort(right, rightP);
+			return merge(left, right, leftP, rightP);
 
 		}
 
 	}
 	
 	/**
-	 * Este metodo sirve para ordenar de menor a mayor el arraylist de los
+	 * ordenar de menor a mayor el arraylist de los
 	 * domicilios de los clientes 
+	 * 
+	 * @param left
+	 *            es la parte izquierda del arraylist del numero de veces de los
+	 *            clientes
+	 * @param right
+	 *            es la parte derecha del arraylist del numero de veces de los
+	 *            clientes
+	 * @param leftP
+	 *            es la parte izquierda del arraylist de los domicilios de los
+	 *            clientes
+	 * @param rightP
+	 *            es la parte derecha del arraylist del numero de veces de los
+	 *            clientes
+	 * @return devuelve el arraylist del numero de veces ordenado
 	 */
 	
 	public static ArrayList<Integer> merge(ArrayList<Integer> left, ArrayList<Integer> right, ArrayList<String> leftP,
 			ArrayList<String> rightP) {
 
-		ArrayList<Integer> aux = new ArrayList<>();
+		ArrayList<Integer> auxiliar = new ArrayList<>();
 		ArrayList<String> auxDomicilios = new ArrayList<>();
 
 		while (!left.isEmpty() && !right.isEmpty()) {
 
 			if (left.get(0) > right.get(0)) {
-				aux.add(right.get(0));
+				auxiliar.add(right.get(0));
 				right.remove(0);
 				auxDomicilios.add(rightP.get(0));
 				rightP.remove(0);
 			} else {
-				aux.add(left.get(0));
+				auxiliar.add(left.get(0));
 				left.remove(0);
 				auxDomicilios.add(leftP.get(0));
 				leftP.remove(0);
@@ -188,21 +240,21 @@ public class BusquedaClienteDomicilio extends JFrame {
 
 		while (!left.isEmpty()) {
 
-			aux.add(left.get(0));
+			auxiliar.add(left.get(0));
 			left.remove(0);
 			auxDomicilios.add(leftP.get(0));
 			leftP.remove(0);
 		}
 		while (!right.isEmpty()) {
 
-			aux.add(right.get(0));
+			auxiliar.add(right.get(0));
 			right.remove(0);
 			auxDomicilios.add(rightP.get(0));
 			rightP.remove(0);
 		}
 
 		domicilios = auxDomicilios;
-		return aux;
+		return auxiliar;
 
 	}
 }

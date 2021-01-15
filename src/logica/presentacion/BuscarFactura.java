@@ -32,17 +32,33 @@ public class BuscarFactura extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private ArrayList<Factura> listaFacturas= new ArrayList<Factura>();
+	private ArrayList<Factura> listaFacturas = new ArrayList<Factura>();
 	private MenuAdministrador padre;
-	private ArrayList<Comercial> listaComerciales= new ArrayList<Comercial>();
-	private ArrayList<Tasador> listaTasadores= new ArrayList<Tasador>();
+	private ArrayList<Comercial> listaComerciales = new ArrayList<Comercial>();
+	private ArrayList<Tasador> listaTasadores = new ArrayList<Tasador>();
 	private int ocasion;
 	private JLabel lblBusquedaFactura;
-
 	
+	
+	public MenuAdministrador getPadre() {
+		return padre;
+	}
+
+	public void setPadre(MenuAdministrador padre) {
+		this.padre = padre;
+	}
+
+	public int getOcasion() {
+		return ocasion;
+	}
+
+	public void setOcasion(int ocasion) {
+		this.ocasion = ocasion;
+	}
 
 	/**
 	 * Create the frame
+	 * 
 	 * @param nombreDomicilios
 	 * @param numFac
 	 * @param coste
@@ -50,18 +66,16 @@ public class BuscarFactura extends JFrame {
 	 * @param menuAdministrador
 	 * @param facturasBD
 	 */
-	
-	
-	
+
 	// buscar factura por fecha
-		public BuscarFactura(ArrayList<Factura> facturasBD, MenuAdministrador padre, String dato, int ocasion) {
-			this.listaFacturas = facturasBD;
-			this.padre = padre;
-			lblBusquedaFactura = new JLabel(dato);
-			ocasion = ocasion;
-			cargarVentana();
-		}
-		
+	public BuscarFactura(ArrayList<Factura> facturasBD, MenuAdministrador padre, String dato, int ocasion) {
+		this.listaFacturas = facturasBD;
+		this.padre = padre;
+		lblBusquedaFactura = new JLabel(dato);
+		ocasion = ocasion;
+		cargarVentana();
+	}
+
 	/**
 	 * @wbp.parser.constructor
 	 */
@@ -69,15 +83,15 @@ public class BuscarFactura extends JFrame {
 			int numFac, ArrayList<String> nombreDomicilios) {
 		setResizable(false);
 		this.listaComerciales = listaComerciales;
-		this.listaTasadores=listaTasadores;
+		this.listaTasadores = listaTasadores;
 		this.padre = padre;
 		ocasion = ocasion;
 		cargarVentana();
-		
+
 	}
-		public void cargarVentana(){
-			
-		
+
+	public void cargarVentana() {
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -93,7 +107,7 @@ public class BuscarFactura extends JFrame {
 		JButton btnOk = new JButton("OK");
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				// Accion OK buscar por fecha FACTURAS
 
 				String fecha = textField.getText();
@@ -124,7 +138,7 @@ public class BuscarFactura extends JFrame {
 		JButton btnSalir = new JButton("SALIR");
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				BuscarFactura.this.dispose();
 				padre.setVisible(true);
 
@@ -144,14 +158,13 @@ public class BuscarFactura extends JFrame {
 		label_1.setBounds(15, 86, 78, 31);
 		contentPane.add(label_1);
 	}
-	
-		public static Date variarFecha(Date fecha, int campo, int valor) {
-			if (valor == 0)
-				return fecha;
-			Calendar calendar = Calendar.getInstance();
-			calendar.setTime(fecha);
-			calendar.add(campo, valor);
-			return calendar.getTime();
-		}
-}
 
+	public static Date variarFecha(Date fecha, int campo, int valor) {
+		if (valor == 0)
+			return fecha;
+		Calendar calendario = Calendar.getInstance();
+		calendario.setTime(fecha);
+		calendario.add(campo, valor);
+		return calendario.getTime();
+	}
+}

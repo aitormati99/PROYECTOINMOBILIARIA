@@ -2,7 +2,7 @@ package utilidades;
 
 import java.util.List;
 
-// He hecho uso de quicksort no se si se utiliza de forma eficiente
+// He hecho  quicksort no se si se utiliza de forma muy eficiente la verdad
 
 public class QuickSort {
 
@@ -17,10 +17,14 @@ public class QuickSort {
 
 		else {
 
-			int pivot = a.get(inicio); //  primer elemento como pivote
+		//  primer elemento como pivote
+			
+			int pivot = a.get(inicio); 
 
-			int ini = inicio + 1; // primer elemento del array quito el
-									// pivote
+			// primer elemento del array quito el pivote
+		
+			
+			int ini = inicio + 1; 
 
 			int aux;
 
@@ -37,21 +41,22 @@ public class QuickSort {
 					a.set(j, a.get(ini));
 
 					a.set(ini, a.get(j));
+					
+					// llega a tamaño del array
 
-					ini++; // llega a tamaño del array
+					ini++; 
 
 				}
 
 			}
 
+		//  pivote a la ultima posicion
 
-			a.set(inicio, a.get(ini - 1)); //  pivote a la ultima
-											// posicion
+			a.set(inicio, a.get(ini - 1)); 
 
 			a.set(ini - 1, pivot); //
 
-			// llama a la funcion del quicksort en el lado izquierdo y derecho
-			// del pivote
+			// llama a la funcion del quicksort en el lado izquierdo y derecho  del pivote
 
 			QuickSort(a, inicio, ini - 2);
 
